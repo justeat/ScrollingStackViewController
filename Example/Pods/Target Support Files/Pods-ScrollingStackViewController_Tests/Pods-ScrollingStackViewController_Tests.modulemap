@@ -1,0 +1,6 @@
+framework module Pods_ScrollingStackViewController_Tests {
+  umbrella header "Pods-ScrollingStackViewController_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UEC-8A-HLs">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ScrollingStackVC-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vXZ-lx-hvc" customClass="ViewController" customModule="ScrollingStackViewController_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="ScrollingStackVC" id="Xim-V2-TkH">
+                        <barButtonItem key="leftBarButtonItem" title="Scroll to 8" id="L5q-xs-GZA">
+                            <connections>
+                                <action selector="scrollTo8Tapped:" destination="vXZ-lx-hvc" id="ymP-nP-7m6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Hide 5" id="sS9-PZ-FuN">
+                            <connections>
+                                <action selector="hideShowTapped:" destination="vXZ-lx-hvc" id="XXJ-EC-pIR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="hideShowButton" destination="sS9-PZ-FuN" id="AOp-T7-cei"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972" y="38.23088455772114"/>
+        </scene>
+        <!--Segment Controller-->
+        <scene sceneID="cM0-OZ-4wX">
+            <objects>
+                <viewController storyboardIdentifier="SegmentController" id="vRi-8o-Wvi" customClass="SegmentController" customModule="ScrollingStackViewController_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HMF-6T-3ts"/>
+                        <viewControllerLayoutGuide type="bottom" id="j9N-aq-e5B"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="diF-N9-6bD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="101"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="52t-YW-ce1">
+                                <rect key="frame" x="0.0" y="10" width="375" height="81"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BvQ-lA-qHp">
+                                        <rect key="frame" x="164.5" y="0.0" width="46.5" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPj-do-huJ">
+                                        <rect key="frame" x="15" y="37" width="345" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Fe9-q0-HAA"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.14901960780000001" green="0.43921568630000002" blue="0.79215686269999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Hide label">
+                                            <color key="titleColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                <color key="value" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="hideShowButtonTapped:" destination="vRi-8o-Wvi" eventType="touchUpInside" id="VGw-ko-ML3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fPj-do-huJ" secondAttribute="trailing" constant="15" id="KOU-33-LQ8"/>
+                                    <constraint firstItem="fPj-do-huJ" firstAttribute="leading" secondItem="52t-YW-ce1" secondAttribute="leading" constant="15" id="j8q-6X-HlS"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="j9N-aq-e5B" firstAttribute="top" secondItem="52t-YW-ce1" secondAttribute="bottom" constant="10" id="9wN-GJ-7bA"/>
+                            <constraint firstItem="52t-YW-ce1" firstAttribute="leading" secondItem="diF-N9-6bD" secondAttribute="leading" id="hhw-bH-ofA"/>
+                            <constraint firstItem="52t-YW-ce1" firstAttribute="top" secondItem="HMF-6T-3ts" secondAttribute="bottom" constant="10" id="qJV-2d-XSQ"/>
+                            <constraint firstAttribute="trailing" secondItem="52t-YW-ce1" secondAttribute="trailing" id="qkM-iQ-6Qp"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="101"/>
+                    <connections>
+                        <outlet property="countLabel" destination="BvQ-lA-qHp" id="bpj-t6-CZH"/>
+                        <outlet property="hideMeButton" destination="fPj-do-huJ" id="XG9-As-IKk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VqO-ki-mpk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1721" y="-216"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cM1-Z5-GWw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UEC-8A-HLs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Es2-Rf-1jN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="e39-K1-d1X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JRb-ke-2PC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="146" y="38"/>
+        </scene>
+    </scenes>
+</document>

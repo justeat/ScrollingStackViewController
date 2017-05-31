@@ -1,0 +1,6 @@
+framework module ScrollingStackViewController {
+  umbrella header "ScrollingStackViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}
