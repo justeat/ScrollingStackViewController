@@ -38,7 +38,7 @@ open class ScrollingStackViewController: UIViewController {
         }
     }
     
-    static public func defaultAnimate(_ animations: @escaping (Void) -> (), completion: ((Bool) -> Void)?) {
+    static public func defaultAnimate(_ animations: @escaping () -> (), completion: ((Bool) -> Void)?) {
         
         UIView.animate(withDuration: 0.5,
                        delay: 0,
@@ -57,7 +57,7 @@ open class ScrollingStackViewController: UIViewController {
         return self.scrollView.contentSize.height - self.scrollView.frame.size.height
     }
     
-    static public func defaultScrollAnimate(_ animations: @escaping (Void) -> (), completion: ((Bool) -> Void)?) {
+    static public func defaultScrollAnimate(_ animations: @escaping () -> (), completion: ((Bool) -> Void)?) {
         
         UIView.animate(withDuration: 0.75,
                        delay: 0,
