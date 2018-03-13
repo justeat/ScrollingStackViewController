@@ -20,7 +20,7 @@ class ViewController: ScrollingStackViewController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        for x in 1...10 {
+        for x in 1...5 {
             
             let viewController = storyboard.instantiateViewController(withIdentifier: "SegmentController") as! SegmentController
             viewController.count = x
@@ -28,6 +28,18 @@ class ViewController: ScrollingStackViewController {
             
             add(viewController: viewController)
         }
+        
+        let insets = UIEdgeInsets(top: 20, left: 40, bottom: 20, right: 40)
+        
+        for x in 6...10 {
+            
+            let viewController = storyboard.instantiateViewController(withIdentifier: "SegmentController") as! SegmentController
+            viewController.count = x
+            segments += [viewController]
+            
+            add(viewController: viewController, edgeInsets: insets)
+        }
+
         
         // separators
         spacingColor = UIColor.lightGray

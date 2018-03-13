@@ -133,6 +133,10 @@ open class ScrollingStackViewController: UIViewController {
         insert(viewController: viewController, at: stackView.arrangedSubviews.count)
     }
     
+    open func add(viewController: UIViewController, edgeInsets: UIEdgeInsets) {
+        insert(viewController: viewController, edgeInsets: edgeInsets, at: stackView.arrangedSubviews.count)
+    }
+    
     open func insert(viewController: UIViewController, at index: Int) {
         
         addChildViewController(viewController)
@@ -141,10 +145,34 @@ open class ScrollingStackViewController: UIViewController {
         stackView.insertArrangedSubview(viewController.view, at: index)
     }
     
+    open func insert(viewController: UIViewController, edgeInsets: UIEdgeInsets, at index: Int) {
+
+        addChildViewController(viewController)
+        viewController.didMove(toParentViewController: self)
+        
+        let childView: UIView = viewController.view
+        let containerView = UIView()
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        childView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(childView)
+        
+        let constraints = [
+            childView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: edgeInsets.top),
+            childView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: edgeInsets.left),
+            containerView.bottomAnchor.constraint(equalTo: childView.bottomAnchor, constant: edgeInsets.bottom),
+            containerView.trailingAnchor.constraint(equalTo: childView.trailingAnchor, constant: edgeInsets.right),
+        ]
+        
+        NSLayoutConstraint.activate(constraints)
+        
+        stackView.insertArrangedSubview(containerView, at: index)
+    }
+    
     open func remove(viewController: UIViewController) {
         
         stackView.removeArrangedSubview(viewController.view)
         
+        viewController.willMove(toParentViewController: nil)
         viewController.removeFromParentViewController()
     }
     
@@ -177,6 +205,10 @@ open class ScrollingStackViewController: UIViewController {
         //check if viewDidLayoutSubviews finished to resize scrollview
         if self.isArranged(view: viewController.view), self.maxOffsetY > 0  {
             self.scrollTo(view: viewController.view, {
+                action?()
+            })
+        } else if let superview = viewController.view.superview, superview != stackView, self.isArranged(view: superview), self.maxOffsetY > 0 {
+            self.scrollTo(view: superview, {
                 action?()
             })
         } else {

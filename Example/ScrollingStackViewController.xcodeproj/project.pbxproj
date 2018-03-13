@@ -12,7 +12,8 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		607FACEC1AFB9204008FA782 /* ScrollingStackViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* ScrollingStackViewTests.swift */; };
+		6DC866512057D24C0077AF5F /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC8664F2057D2490077AF5F /* Factory.swift */; };
 		B33DE7C21E44DD3B00236E66 /* SegmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33DE7C11E44DD3B00236E66 /* SegmentController.swift */; };
 		B96A4F0D9BAB29F33246EA2A /* Pods_ScrollingStackViewController_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB51B0F5EC78B9893A452F88 /* Pods_ScrollingStackViewController_Tests.framework */; };
 		C9448518C96B0320E8B4B123 /* Pods_ScrollingStackViewController_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD4B11A859E822C0341AB2E1 /* Pods_ScrollingStackViewController_Example.framework */; };
@@ -42,8 +43,9 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* ScrollingStackViewController_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollingStackViewController_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		607FACEB1AFB9204008FA782 /* ScrollingStackViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingStackViewTests.swift; sourceTree = "<group>"; };
 		627F56F09E411F967BC74499 /* Pods-ScrollingStackViewController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrollingStackViewController_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScrollingStackViewController_Tests/Pods-ScrollingStackViewController_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		6DC8664F2057D2490077AF5F /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		B33DE7C11E44DD3B00236E66 /* SegmentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentController.swift; sourceTree = "<group>"; };
 		C714F8250775697F85B5D77C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		CD4B11A859E822C0341AB2E1 /* Pods_ScrollingStackViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScrollingStackViewController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,7 +140,8 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				6DB697842056C04D000BB495 /* Utilities */,
+				607FACEB1AFB9204008FA782 /* ScrollingStackViewTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -160,6 +163,14 @@
 				C714F8250775697F85B5D77C /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		6DB697842056C04D000BB495 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6DC8664F2057D2490077AF5F /* Factory.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,7 +394,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				607FACEC1AFB9204008FA782 /* ScrollingStackViewTests.swift in Sources */,
+				6DC866512057D24C0077AF5F /* Factory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +573,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScrollingStackViewController_Example.app/ScrollingStackViewController_Example";
 			};
 			name = Debug;
 		};
@@ -577,6 +590,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScrollingStackViewController_Example.app/ScrollingStackViewController_Example";
 			};
 			name = Release;
 		};
