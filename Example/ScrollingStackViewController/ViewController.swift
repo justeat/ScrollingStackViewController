@@ -37,7 +37,6 @@ class ViewController: ScrollingStackViewController {
             viewController.count = x
             segments += [viewController]
             
-            viewController.view.backgroundColor = UIColor.white
             add(viewController: viewController, edgeInsets: insets)
         }
 

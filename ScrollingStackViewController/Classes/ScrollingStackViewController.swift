@@ -164,7 +164,6 @@ open class ScrollingStackViewController: UIViewController {
         ]
         
         NSLayoutConstraint.activate(constraints)
-        containerView.updateConstraints()
         
         stackView.insertArrangedSubview(containerView, at: index)
     }
