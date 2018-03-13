@@ -2,7 +2,7 @@ import UIKit
 import XCTest
 import ScrollingStackViewController
 
-class Tests: XCTestCase {
+class ScrollingStackViewTests: XCTestCase {
     
     
     let window = UIApplication.shared.keyWindow!

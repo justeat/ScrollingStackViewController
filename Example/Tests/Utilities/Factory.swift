@@ -1,11 +1,3 @@
-//
-//  Factory.swift
-//  ScrollingStackViewController_Example
-//
-//  Created by Jack Newcombe on 13/03/2018.
-//  Copyright © 2018 CocoaPods. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import ScrollingStackViewController
