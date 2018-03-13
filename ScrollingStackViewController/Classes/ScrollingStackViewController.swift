@@ -136,15 +136,15 @@ open class ScrollingStackViewController: UIViewController {
     open func insert(viewController: UIViewController, at index: Int) {
         
         addChildViewController(viewController)
-        viewController.didMove(toParentViewController: self)
-        
         stackView.insertArrangedSubview(viewController.view, at: index)
+        viewController.didMove(toParentViewController: self)
     }
     
     open func remove(viewController: UIViewController) {
         
+        guard childViewControllers.contains(where: { $0 === viewController }) else { return }
+        viewController.willMove(toParentViewController: nil)
         stackView.removeArrangedSubview(viewController.view)
-        
         viewController.removeFromParentViewController()
     }
     
