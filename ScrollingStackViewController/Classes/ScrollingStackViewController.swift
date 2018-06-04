@@ -88,13 +88,11 @@ open class ScrollingStackViewController: UIViewController {
         
         let views = ["scrollView" : scrollView,
                      "stackViewBackgroundView" : stackViewBackgroundView,
-                     "stackView" : stackView,
-                     "topGuide" : topLayoutGuide,
-                     "bottomGuide" : bottomLayoutGuide] as [String : Any]
+                     ] as [String : Any]
         
         var constraints = [NSLayoutConstraint]()
         
-        constraints += NSLayoutConstraint.constraints(withVisualFormat: "V:[topGuide][scrollView][bottomGuide]", options: [], metrics: nil, views: views)
+        constraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|[scrollView]|", options: [], metrics: nil, views: views)
         constraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|[scrollView]|", options: [], metrics: nil, views: views)
         
         pinStackView(withBorderWidth: borderWidth)
