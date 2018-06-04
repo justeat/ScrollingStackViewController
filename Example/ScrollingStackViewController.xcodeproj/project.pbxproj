@@ -185,7 +185,7 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				BA89436BBB507AFC82925AAC /* [CP] Embed Pods Frameworks */,
-				57B1D6A77D8F85F1E06C3190 /* [CP] Copy Pods Resources */,
+				9E6DD976B818225ED4210082 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -204,8 +204,8 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				0E0324EAB4EAC86EDF333695 /* [CP] Embed Pods Frameworks */,
-				17092D371FD687D76F254A03 /* [CP] Copy Pods Resources */,
+				A86ECBBAABC1D5DC60EFFAC4 /* [CP] Embed Pods Frameworks */,
+				5C97EB0E812858F8B803889D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -278,22 +278,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0E0324EAB4EAC86EDF333695 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScrollingStackViewController_Tests/Pods-ScrollingStackViewController_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		17092D371FD687D76F254A03 /* [CP] Copy Pods Resources */ = {
+		5C97EB0E812858F8B803889D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -308,7 +293,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScrollingStackViewController_Tests/Pods-ScrollingStackViewController_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		57B1D6A77D8F85F1E06C3190 /* [CP] Copy Pods Resources */ = {
+		9E6DD976B818225ED4210082 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -321,6 +306,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScrollingStackViewController_Example/Pods-ScrollingStackViewController_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A86ECBBAABC1D5DC60EFFAC4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScrollingStackViewController_Tests/Pods-ScrollingStackViewController_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BA89436BBB507AFC82925AAC /* [CP] Embed Pods Frameworks */ = {

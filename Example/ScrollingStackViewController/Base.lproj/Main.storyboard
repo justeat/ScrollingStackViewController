@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UEC-8A-HLs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UEC-8A-HLs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--ScrollingStackVC-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vXZ-lx-hvc" customClass="ViewController" customModule="ScrollingStackViewController_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="ScrollingStackViewController_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="BhD-KY-VTz"/>
                     </view>
                     <navigationItem key="navigationItem" title="ScrollingStackVC" id="Xim-V2-TkH">
                         <barButtonItem key="leftBarButtonItem" title="Scroll to 8" id="L5q-xs-GZA">
@@ -46,10 +44,6 @@
         <scene sceneID="cM0-OZ-4wX">
             <objects>
                 <viewController storyboardIdentifier="SegmentController" id="vRi-8o-Wvi" customClass="SegmentController" customModule="ScrollingStackViewController_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="HMF-6T-3ts"/>
-                        <viewControllerLayoutGuide type="bottom" id="j9N-aq-e5B"/>
-                    </layoutGuides>
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="diF-N9-6bD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="101"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,11 +90,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="j9N-aq-e5B" firstAttribute="top" secondItem="52t-YW-ce1" secondAttribute="bottom" constant="10" id="9wN-GJ-7bA"/>
-                            <constraint firstItem="52t-YW-ce1" firstAttribute="leading" secondItem="diF-N9-6bD" secondAttribute="leading" id="hhw-bH-ofA"/>
-                            <constraint firstItem="52t-YW-ce1" firstAttribute="top" secondItem="HMF-6T-3ts" secondAttribute="bottom" constant="10" id="qJV-2d-XSQ"/>
-                            <constraint firstAttribute="trailing" secondItem="52t-YW-ce1" secondAttribute="trailing" id="qkM-iQ-6Qp"/>
+                            <constraint firstItem="EOo-Yh-jdL" firstAttribute="bottom" secondItem="52t-YW-ce1" secondAttribute="bottom" constant="10" id="9wN-GJ-7bA"/>
+                            <constraint firstItem="52t-YW-ce1" firstAttribute="leading" secondItem="EOo-Yh-jdL" secondAttribute="leading" id="hhw-bH-ofA"/>
+                            <constraint firstItem="52t-YW-ce1" firstAttribute="top" secondItem="EOo-Yh-jdL" secondAttribute="top" constant="10" id="qJV-2d-XSQ"/>
+                            <constraint firstItem="EOo-Yh-jdL" firstAttribute="trailing" secondItem="52t-YW-ce1" secondAttribute="trailing" id="qkM-iQ-6Qp"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="EOo-Yh-jdL"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
