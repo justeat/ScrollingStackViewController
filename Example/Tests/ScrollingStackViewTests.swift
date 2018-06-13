@@ -33,6 +33,32 @@ class ScrollingStackViewTests: XCTestCase {
 
         self.waitForExpectations(timeout: 5.0, handler: nil)
     }
+    
+    func testShowHideViewControllers() {
+        let vc = Factory.createScrollingStackViewController(window: window)
+        
+        let height = vc.view.frame.height
+        
+        let child1 = Factory.createStubViewController(height: height)
+        let child2 = Factory.createStubViewController(height: height)
+        XCTAssert(vc.stackView.arrangedSubviews.count == 0)
+        
+        vc.add(viewController: child1)
+        XCTAssert(vc.stackView.arrangedSubviews.count == 1)
+        
+        vc.show(viewController: child2, insertIfNeeded: false)
+        XCTAssert(vc.stackView.arrangedSubviews.count == 1)
+        
+        vc.show(viewController: child2, insertIfNeeded: true)
+        XCTAssert(vc.stackView.arrangedSubviews.count == 2)
+    
+        vc.hide(viewController: child1)
+        XCTAssert(vc.stackView.arrangedSubviews.count == 2)
+        XCTAssert(child1.view.isHidden)
+        
+        vc.remove(viewController: child2)
+        XCTAssert(vc.stackView.arrangedSubviews.count == 1)
+    }
 
     func testComplexScrolling() {
         
