@@ -127,7 +127,6 @@ open class ScrollingStackViewController: UIViewController {
     }
     
     open func add(viewController: UIViewController) {
-        
         insert(viewController: viewController, at: stackView.arrangedSubviews.count)
     }
     
@@ -174,7 +173,11 @@ open class ScrollingStackViewController: UIViewController {
         viewController.removeFromParentViewController()
     }
     
-    open func show(viewController: UIViewController, _ action: (() -> Void)? = nil) {
+    open func show(viewController: UIViewController, insertIfNeeded: Bool = false, _ action: (() -> Void)? = nil) {
+        
+        if insertIfNeeded {
+            add(viewController: viewController)
+        }
         
         animate({
             viewController.view.alpha = 1
