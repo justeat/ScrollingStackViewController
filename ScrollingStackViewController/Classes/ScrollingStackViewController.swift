@@ -8,6 +8,14 @@
 
 import UIKit
 
+public enum InsertionLocation {
+    case start
+    case end
+    case index(_: UInt)
+    case after(viewController: UIViewController)
+    case before(viewController: UIViewController)
+}
+
 open class ScrollingStackViewController: UIViewController {
     
     public let scrollView: UIScrollView = UIScrollView()
@@ -142,6 +150,37 @@ open class ScrollingStackViewController: UIViewController {
         stackView.insertArrangedSubview(viewController.view, at: index)
     }
     
+    open func insert(viewController: UIViewController, edgeInsets: UIEdgeInsets, at location: InsertionLocation) {
+        var insertionIndex: Int?
+        
+        switch location {
+        case .start:
+            insertionIndex = 0
+            
+        case .end:
+            insertionIndex = childViewControllers.count
+            
+        case .index(let index):
+            insertionIndex =  min(Int(index), childViewControllers.count)
+            
+        case .after(let afterViewController):
+            if let afterViewIndex = stackView.arrangedSubviews.index(of: afterViewController.view) {
+                insertionIndex = afterViewIndex + 1
+            } else {
+                insertionIndex = childViewControllers.count
+            }
+            
+        case .before(let beforeViewController):
+            if let beforeViewIndex = stackView.arrangedSubviews.index(of: beforeViewController.view) {
+                insertionIndex = beforeViewIndex
+            } else {
+                insertionIndex = childViewControllers.count
+            }
+        }
+            
+        insert(viewController: viewController, edgeInsets: edgeInsets, at: insertionIndex ?? childViewControllers.count)
+    }
+    
     open func insert(viewController: UIViewController, edgeInsets: UIEdgeInsets, at index: Int) {
 
         addChildViewController(viewController)
@@ -173,11 +212,18 @@ open class ScrollingStackViewController: UIViewController {
         viewController.removeFromParentViewController()
     }
     
-    open func show(viewController: UIViewController, insertIfNeeded: Bool = false, _ action: (() -> Void)? = nil) {
+    open func show(viewController: UIViewController,
+                   insertIfNeeded insertion: (location: InsertionLocation, insets: UIEdgeInsets),
+                   _ action: (() -> Void)? = nil) {
         
-        if insertIfNeeded {
-            add(viewController: viewController)
+        if !childViewControllers.contains(viewController) || !isArranged(view: viewController.view) {
+            insert(viewController: viewController, edgeInsets: insertion.insets, at: insertion.location)
         }
+
+        show(viewController: viewController, action)
+    }
+    
+    open func show(viewController: UIViewController, _ action: (() -> Void)? = nil) {
         
         animate({
             viewController.view.alpha = 1
