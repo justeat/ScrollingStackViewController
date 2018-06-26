@@ -3,7 +3,7 @@
 //  ScrollingStackViewController_Tests
 //
 //  Created by Ed Rutter on 21/06/2018.
-//  Copyright © 2018 CocoaPods. All rights reserved.
+//  Copyright © 2018 Just Eat. All rights reserved.
 //
 
 import XCTest
