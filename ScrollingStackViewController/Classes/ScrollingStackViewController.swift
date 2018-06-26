@@ -212,17 +212,13 @@ open class ScrollingStackViewController: UIViewController {
     }
     
     open func show(viewController: UIViewController,
-                   insertIfNeeded insertion: (location: InsertionLocation, insets: UIEdgeInsets),
+                   insertIfNeeded insertion: (location: InsertionLocation, insets: UIEdgeInsets)? = nil,
                    _ action: (() -> Void)? = nil) {
         
-        if !childViewControllers.contains(viewController) || !isArranged(view: viewController.view) {
+        
+        if let insertion = insertion, !isArrangedOrContained(view: viewController.view) || !childViewControllers.contains(viewController) {
             insert(viewController: viewController, edgeInsets: insertion.insets, at: insertion.location)
         }
-
-        show(viewController: viewController, action)
-    }
-    
-    open func show(viewController: UIViewController, _ action: (() -> Void)? = nil) {
         
         animate({
             viewController.view.alpha = 1
@@ -296,12 +292,10 @@ open class ScrollingStackViewController: UIViewController {
     }
     
     func arrangedViewContainerIndex(for view: UIView) -> Int? {
-        let containerView = stackView.arrangedSubviews.first(where: { $0.subviews.contains(view) })
-        
-        if containerView == nil {
-            return nil
+        if let containerView = stackView.arrangedSubviews.first(where: { $0.subviews.contains(view) }) {
+            return stackView.arrangedSubviews.index(of: containerView)
         } else {
-            return stackView.arrangedSubviews.index(of: containerView!)
+            return nil
         }
     }
 }
