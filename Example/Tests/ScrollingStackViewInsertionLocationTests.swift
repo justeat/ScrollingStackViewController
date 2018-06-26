@@ -17,7 +17,6 @@ class ScrollingStackViewInsertionTests: XCTestCase {
     var childB: UIViewController!
     var insertingChild: UIViewController!
 
-    
     override func setUp() {
         super.setUp()
         
@@ -27,10 +26,6 @@ class ScrollingStackViewInsertionTests: XCTestCase {
         childA = Factory.createStubViewController(height: 100)
         childB = Factory.createStubViewController(height: 100)
         insertingChild = Factory.createStubViewController(height: 100)
-    }
-    
-    override func tearDown() {
-        super.tearDown()
     }
     
     func testShow_InsertingIfNeeded_Insets() {
