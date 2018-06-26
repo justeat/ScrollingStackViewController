@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import ScrollingStackViewController
+@testable import ScrollingStackViewController
 
 class ScrollingStackViewInsertionTests: XCTestCase {
     
@@ -62,7 +62,7 @@ class ScrollingStackViewInsertionTests: XCTestCase {
         vc.insert(viewController: childB, at: 1)
         
         vc.show(viewController: insertingChild, insertIfNeeded: (location: .start, insets: .zero))
-        XCTAssert(vc.indexForViewOrContainer(insertingChild.view) == 0, "Ordering should be InsertingChild, Child A, Child B")
+        XCTAssert(vc.arrangedViewOrContainerIndex(for: insertingChild.view) == 0, "Ordering should be InsertingChild, Child A, Child B")
     }
     
     func testShow_insertingIfNeeded_atEnd() {
@@ -70,7 +70,7 @@ class ScrollingStackViewInsertionTests: XCTestCase {
         vc.insert(viewController: childB, at: 1)
         
         vc.show(viewController: insertingChild, insertIfNeeded: (location: .end, insets: .zero))
-        XCTAssert(vc.indexForViewOrContainer(insertingChild.view) == 2, "Ordering should be Child A, Child B, InsertingChild")
+        XCTAssert(vc.arrangedViewOrContainerIndex(for: insertingChild.view) == 2, "Ordering should be Child A, Child B, InsertingChild")
     }
     
     func testShow_insertingIfNeeded_atIndex() {
@@ -78,15 +78,15 @@ class ScrollingStackViewInsertionTests: XCTestCase {
         vc.insert(viewController: childB, at: 1)
         
         vc.show(viewController: insertingChild, insertIfNeeded: (location: .index(0), insets: .zero))
-        XCTAssert(vc.indexForViewOrContainer(insertingChild.view) == 0, "Ordering should be InsertingChild, Child A, Child B")
+        XCTAssert(vc.arrangedViewOrContainerIndex(for: insertingChild.view) == 0, "Ordering should be InsertingChild, Child A, Child B")
         
         vc.remove(viewController: insertingChild)
         vc.show(viewController: insertingChild, insertIfNeeded: (location: .index(2), insets: .zero))
-        XCTAssert(vc.indexForViewOrContainer(insertingChild.view) == 2, "Ordering should be Child A, Child B, InsertingChild")
+        XCTAssert(vc.arrangedViewOrContainerIndex(for: insertingChild.view) == 2, "Ordering should be Child A, Child B, InsertingChild")
         
         vc.remove(viewController: insertingChild)
         vc.show(viewController: insertingChild, insertIfNeeded: (location: .index(5), insets: .zero))
-        XCTAssert(vc.indexForViewOrContainer(insertingChild.view) == 2, "Ordering should be Child A, Child B, InsertingChild")
+        XCTAssert(vc.arrangedViewOrContainerIndex(for: insertingChild.view) == 2, "Ordering should be Child A, Child B, InsertingChild")
     }
     
     func testShow_insertingIfNeeded_afterViewViewController() {
@@ -94,7 +94,7 @@ class ScrollingStackViewInsertionTests: XCTestCase {
         vc.insert(viewController: childB, at: 1)
         
         vc.show(viewController: insertingChild, insertIfNeeded: (location: .after(viewController: childA), insets: .zero))
-        XCTAssert(vc.indexForViewOrContainer(insertingChild.view) == 1, "Ordering should be Child A, InsertingChild, Child B")
+        XCTAssert(vc.arrangedViewOrContainerIndex(for: insertingChild.view) == 1, "Ordering should be Child A, InsertingChild, Child B")
     }
     
     func testShow_insertingIfNeeded_beforeViewViewController() {
@@ -102,26 +102,6 @@ class ScrollingStackViewInsertionTests: XCTestCase {
         vc.insert(viewController: childB, at: 1)
         
         vc.show(viewController: insertingChild, insertIfNeeded: (location: .before(viewController: childB), insets: .zero))
-        XCTAssert(vc.indexForViewOrContainer(insertingChild.view) == 1, "Ordering should be Child A, InsertingChild, Child B")
+        XCTAssert(vc.arrangedViewOrContainerIndex(for: insertingChild.view) == 1, "Ordering should be Child A, InsertingChild, Child B")
     }
-}
-
-fileprivate extension ScrollingStackViewController {
-    
-    func indexForViewOrContainer(_ view: UIView) -> Int? {
-        return stackView.arrangedSubviews.index(of: view) ?? indexOfContainer(for: view)
-    }
-    
-    func indexOfContainer(for view: UIView) -> Int? {
-        
-        let containerView = stackView.arrangedSubviews.filter { $0.subviews.contains(view) }.first
-        
-        if containerView == nil {
-            return nil
-        } else {
-            return stackView.arrangedSubviews.index(of: containerView!)
-        }
-    }
-    
-    
 }

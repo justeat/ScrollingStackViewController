@@ -206,7 +206,10 @@ open class ScrollingStackViewController: UIViewController {
     
     open func remove(viewController: UIViewController) {
         
-        stackView.removeArrangedSubview(viewController.view)
+        if let index = arrangedViewOrContainerIndex(for: viewController.view) {
+            let viewToRemove = stackView.arrangedSubviews[index]
+            stackView.removeArrangedSubview(viewToRemove)
+        }
         
         viewController.willMove(toParentViewController: nil)
         viewController.removeFromParentViewController()
@@ -269,7 +272,11 @@ open class ScrollingStackViewController: UIViewController {
     }
     
     private func isArranged(view: UIView) -> Bool {
-        return self.stackView.arrangedSubviews.filter({ $0 == view}).count > 0
+        return arrangedViewIndex(for: view) != nil
+    }
+    
+    private func isArrangedOrContained(view: UIView) -> Bool {
+        return arrangedViewOrContainerIndex(for: view) != nil
     }
     
     private func scrollTo(view: UIView, _ finished: @escaping (() -> Void)) {
@@ -284,4 +291,21 @@ open class ScrollingStackViewController: UIViewController {
         })
     }
     
+    func arrangedViewOrContainerIndex(for view: UIView) -> Int? {
+        return arrangedViewIndex(for: view) ?? arrangedViewContainerIndex(for: view)
+    }
+    
+    func arrangedViewIndex(for view: UIView) -> Int? {
+        return stackView.arrangedSubviews.index(of: view)
+    }
+    
+    func arrangedViewContainerIndex(for view: UIView) -> Int? {
+        let containerView = stackView.arrangedSubviews.first(where: { $0.subviews.contains(view) })
+        
+        if containerView == nil {
+            return nil
+        } else {
+            return stackView.arrangedSubviews.index(of: containerView!)
+        }
+    }
 }
