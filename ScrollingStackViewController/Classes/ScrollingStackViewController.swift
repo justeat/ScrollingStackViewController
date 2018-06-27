@@ -8,6 +8,14 @@
 
 import UIKit
 
+public enum Position {
+    case start
+    case end
+    case index(_: Int)
+    case after(viewController: UIViewController)
+    case before(viewController: UIViewController)
+}
+
 open class ScrollingStackViewController: UIViewController {
     
     public let scrollView: UIScrollView = UIScrollView()
@@ -127,19 +135,46 @@ open class ScrollingStackViewController: UIViewController {
     }
     
     open func add(viewController: UIViewController) {
-        insert(viewController: viewController, at: stackView.arrangedSubviews.count)
+        insert(viewController: viewController)
     }
     
     open func add(viewController: UIViewController, edgeInsets: UIEdgeInsets) {
-        insert(viewController: viewController, edgeInsets: edgeInsets, at: stackView.arrangedSubviews.count)
+        insert(viewController: viewController, edgeInsets: edgeInsets)
     }
     
     open func insert(viewController: UIViewController, at index: Int) {
+        insert(viewController: viewController, at: .index(index))
+    }
+    
+    open func insert(viewController: UIViewController, edgeInsets: UIEdgeInsets = .zero, at position: Position = .end) {
+        var insertionIndex: Int?
         
-        addChildViewController(viewController)
-        viewController.didMove(toParentViewController: self)
-        
-        stackView.insertArrangedSubview(viewController.view, at: index)
+        switch position {
+        case .start:
+            insertionIndex = 0
+            
+        case .end:
+            insertionIndex = childViewControllers.count
+            
+        case .index(let index):
+            insertionIndex =  min(Int(index), childViewControllers.count)
+            
+        case .after(let afterViewController):
+            if let afterViewIndex = arrangedViewOrContainerIndex(for: afterViewController.view) {
+                insertionIndex = afterViewIndex + 1
+            } else {
+                insertionIndex = childViewControllers.count
+            }
+            
+        case .before(let beforeViewController):
+            if let beforeViewIndex = arrangedViewOrContainerIndex(for: beforeViewController.view) {
+                insertionIndex = beforeViewIndex
+            } else {
+                insertionIndex = childViewControllers.count
+            }
+        }
+            
+        insert(viewController: viewController, edgeInsets: edgeInsets, at: insertionIndex ?? childViewControllers.count)
     }
     
     open func insert(viewController: UIViewController, edgeInsets: UIEdgeInsets, at index: Int) {
@@ -167,16 +202,22 @@ open class ScrollingStackViewController: UIViewController {
     
     open func remove(viewController: UIViewController) {
         
-        stackView.removeArrangedSubview(viewController.view)
+        if let index = arrangedViewOrContainerIndex(for: viewController.view) {
+            let viewToRemove = stackView.arrangedSubviews[index]
+            stackView.removeArrangedSubview(viewToRemove)
+        }
         
         viewController.willMove(toParentViewController: nil)
         viewController.removeFromParentViewController()
     }
     
-    open func show(viewController: UIViewController, insertIfNeeded: Bool = false, _ action: (() -> Void)? = nil) {
+    open func show(viewController: UIViewController,
+                   insertIfNeeded insertion: (position: Position, insets: UIEdgeInsets)? = nil,
+                   _ action: (() -> Void)? = nil) {
         
-        if insertIfNeeded {
-            add(viewController: viewController)
+        
+        if let insertion = insertion, !isArrangedOrContained(view: viewController.view) || !childViewControllers.contains(viewController) {
+            insert(viewController: viewController, edgeInsets: insertion.insets, at: insertion.position)
         }
         
         animate({
@@ -222,10 +263,6 @@ open class ScrollingStackViewController: UIViewController {
         }
     }
     
-    private func isArranged(view: UIView) -> Bool {
-        return self.stackView.arrangedSubviews.filter({ $0 == view}).count > 0
-    }
-    
     private func scrollTo(view: UIView, _ finished: @escaping (() -> Void)) {
         
         scrollAnimate({
@@ -238,4 +275,27 @@ open class ScrollingStackViewController: UIViewController {
         })
     }
     
+    private func isArranged(view: UIView) -> Bool {
+        return arrangedViewIndex(for: view) != nil
+    }
+    
+    private func isArrangedOrContained(view: UIView) -> Bool {
+        return arrangedViewOrContainerIndex(for: view) != nil
+    }
+    
+    func arrangedViewOrContainerIndex(for view: UIView) -> Int? {
+        return arrangedViewIndex(for: view) ?? arrangedViewContainerIndex(for: view)
+    }
+    
+    func arrangedViewIndex(for view: UIView) -> Int? {
+        return stackView.arrangedSubviews.index(of: view)
+    }
+    
+    func arrangedViewContainerIndex(for view: UIView) -> Int? {
+        if let containerView = stackView.arrangedSubviews.first(where: { $0.subviews.contains(view) }) {
+            return stackView.arrangedSubviews.index(of: containerView)
+        } else {
+            return nil
+        }
+    }
 }
