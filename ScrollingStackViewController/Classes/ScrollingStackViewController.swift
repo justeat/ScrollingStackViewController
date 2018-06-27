@@ -8,7 +8,7 @@
 
 import UIKit
 
-public enum InsertionLocation {
+public enum Position {
     case start
     case end
     case index(_: Int)
@@ -146,10 +146,10 @@ open class ScrollingStackViewController: UIViewController {
         insert(viewController: viewController, at: .index(index))
     }
     
-    open func insert(viewController: UIViewController, edgeInsets: UIEdgeInsets = .zero, at location: InsertionLocation = .end) {
+    open func insert(viewController: UIViewController, edgeInsets: UIEdgeInsets = .zero, at position: Position = .end) {
         var insertionIndex: Int?
         
-        switch location {
+        switch position {
         case .start:
             insertionIndex = 0
             
@@ -212,12 +212,12 @@ open class ScrollingStackViewController: UIViewController {
     }
     
     open func show(viewController: UIViewController,
-                   insertIfNeeded insertion: (location: InsertionLocation, insets: UIEdgeInsets)? = nil,
+                   insertIfNeeded insertion: (position: Position, insets: UIEdgeInsets)? = nil,
                    _ action: (() -> Void)? = nil) {
         
         
         if let insertion = insertion, !isArrangedOrContained(view: viewController.view) || !childViewControllers.contains(viewController) {
-            insert(viewController: viewController, edgeInsets: insertion.insets, at: insertion.location)
+            insert(viewController: viewController, edgeInsets: insertion.insets, at: insertion.position)
         }
         
         animate({
