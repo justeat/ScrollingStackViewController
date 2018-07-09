@@ -275,23 +275,23 @@ open class ScrollingStackViewController: UIViewController {
         })
     }
     
-    private func isArranged(view: UIView) -> Bool {
+    public func isArranged(view: UIView) -> Bool {
         return arrangedViewIndex(for: view) != nil
     }
     
-    private func isArrangedOrContained(view: UIView) -> Bool {
+    public func isArrangedOrContained(view: UIView) -> Bool {
         return arrangedViewOrContainerIndex(for: view) != nil
     }
     
-    func arrangedViewOrContainerIndex(for view: UIView) -> Int? {
+    public func arrangedViewOrContainerIndex(for view: UIView) -> Int? {
         return arrangedViewIndex(for: view) ?? arrangedViewContainerIndex(for: view)
     }
     
-    func arrangedViewIndex(for view: UIView) -> Int? {
+    public func arrangedViewIndex(for view: UIView) -> Int? {
         return stackView.arrangedSubviews.index(of: view)
     }
     
-    func arrangedViewContainerIndex(for view: UIView) -> Int? {
+    public func arrangedViewContainerIndex(for view: UIView) -> Int? {
         if let containerView = stackView.arrangedSubviews.first(where: { $0.subviews.contains(view) }) {
             return stackView.arrangedSubviews.index(of: containerView)
         } else {
