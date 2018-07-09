@@ -6,11 +6,11 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   ScrollingStackViewController:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   ScrollingStackViewController: fa7e73d5def343dece41629a5e8707e2574d311e
 
 PODFILE CHECKSUM: 1107023c97aaa6562f2eb38595e37b1267bba2b1
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

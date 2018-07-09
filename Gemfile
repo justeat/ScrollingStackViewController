@@ -1,5 +1,5 @@
-ruby '~> 2.5.1'
+ruby '2.5.1'
 
 source 'http://rubygems.org'
 
-gem 'cocoapods', '1.4.0'
+gem 'cocoapods', '1.5.3'
