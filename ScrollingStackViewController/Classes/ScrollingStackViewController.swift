@@ -233,8 +233,10 @@ open class ScrollingStackViewController: UIViewController {
     open func hide(viewController: UIViewController, _ action: (() -> Void)? = nil) {
         
         animate({
-            viewController.view.alpha = 0
-            viewController.view.isHidden = true
+            if let view = self.arrangedView(for: viewController) {
+                view.alpha = 0
+                view.isHidden = true
+            }
         }, { isFinished in
             if isFinished {
                 action?()
@@ -281,6 +283,11 @@ open class ScrollingStackViewController: UIViewController {
     
     public func isArrangedOrContained(view: UIView) -> Bool {
         return arrangedViewOrContainerIndex(for: view) != nil
+    }
+    
+    public func arrangedView(for viewController: UIViewController) -> UIView? {
+        guard let index = arrangedViewOrContainerIndex(for: viewController.view) else { return nil }
+        return stackView.arrangedSubviews[index]
     }
     
     public func arrangedViewOrContainerIndex(for view: UIView) -> Int? {

@@ -54,7 +54,7 @@ class ScrollingStackViewTests: XCTestCase {
     
         vc.hide(viewController: child1)
         XCTAssert(vc.stackView.arrangedSubviews.count == 2)
-        XCTAssert(child1.view.isHidden)
+        XCTAssert(vc.arrangedView(for: child1)!.isHidden)
         
         vc.remove(viewController: child2)
         XCTAssert(vc.stackView.arrangedSubviews.count == 1)
