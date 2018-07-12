@@ -138,7 +138,7 @@ open class ScrollingStackViewController: UIViewController {
         insert(viewController: viewController)
     }
     
-    open func add(viewController: UIViewController, edgeInsets: UIEdgeInsets) {
+    open func add(viewController: UIViewController, edgeInsets: UIEdgeInsets? = nil) {
         insert(viewController: viewController, edgeInsets: edgeInsets)
     }
     
@@ -146,7 +146,7 @@ open class ScrollingStackViewController: UIViewController {
         insert(viewController: viewController, at: .index(index))
     }
     
-    open func insert(viewController: UIViewController, edgeInsets: UIEdgeInsets = .zero, at position: Position = .end) {
+    open func insert(viewController: UIViewController, edgeInsets: UIEdgeInsets? = nil, at position: Position = .end) {
         var insertionIndex: Int?
         
         switch position {
@@ -177,35 +177,37 @@ open class ScrollingStackViewController: UIViewController {
         insert(viewController: viewController, edgeInsets: edgeInsets, at: insertionIndex ?? childViewControllers.count)
     }
     
-    open func insert(viewController: UIViewController, edgeInsets: UIEdgeInsets, at index: Int) {
+    open func insert(viewController: UIViewController, edgeInsets: UIEdgeInsets?, at index: Int) {
 
         addChildViewController(viewController)
         viewController.didMove(toParentViewController: self)
         
-        let childView: UIView = viewController.view
-        let containerView = UIView()
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        childView.translatesAutoresizingMaskIntoConstraints = false
-        containerView.addSubview(childView)
-        
-        let constraints = [
-            childView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: edgeInsets.top),
-            childView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: edgeInsets.left),
-            containerView.bottomAnchor.constraint(equalTo: childView.bottomAnchor, constant: edgeInsets.bottom),
-            containerView.trailingAnchor.constraint(equalTo: childView.trailingAnchor, constant: edgeInsets.right),
-        ]
-        
-        NSLayoutConstraint.activate(constraints)
-        
-        stackView.insertArrangedSubview(containerView, at: index)
+        if let edgeInsets = edgeInsets {
+            
+            let childView: UIView = viewController.view
+            let containerView = UIView()
+            containerView.translatesAutoresizingMaskIntoConstraints = false
+            childView.translatesAutoresizingMaskIntoConstraints = false
+            containerView.addSubview(childView)
+            
+            let constraints = [
+                childView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: edgeInsets.top),
+                childView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: edgeInsets.left),
+                containerView.bottomAnchor.constraint(equalTo: childView.bottomAnchor, constant: edgeInsets.bottom),
+                containerView.trailingAnchor.constraint(equalTo: childView.trailingAnchor, constant: edgeInsets.right),
+                ]
+            
+            NSLayoutConstraint.activate(constraints)
+            stackView.insertArrangedSubview(containerView, at: index)
+            
+        } else {
+            stackView.insertArrangedSubview(viewController.view, at: index)
+        }
     }
     
     open func remove(viewController: UIViewController) {
-        
-        if let index = arrangedViewOrContainerIndex(for: viewController.view) {
-            let viewToRemove = stackView.arrangedSubviews[index]
-            stackView.removeArrangedSubview(viewToRemove)
-        }
+        guard let arrangedView = arrangedView(for: viewController) else { return }
+        stackView.removeArrangedSubview(arrangedView)
         
         viewController.willMove(toParentViewController: nil)
         viewController.removeFromParentViewController()
@@ -221,8 +223,10 @@ open class ScrollingStackViewController: UIViewController {
         }
         
         animate({
-            viewController.view.alpha = 1
-            viewController.view.isHidden = false
+            if let view = self.arrangedView(for: viewController) {
+                view.alpha = 1
+                view.isHidden = false
+            }
         }, { isFinished in
             if isFinished {
                 action?()

@@ -50,8 +50,17 @@ class ViewController: ScrollingStackViewController {
 Insert a child view controller at position.
 
 ``` Swift
-insert(viewController: viewController3, at: 1)
+insert(viewController: viewController3, at: .index(1))
 ```
+
+Insert a child view controller with padding (child view is added to a container view). NB: When a child view is added to a padding container view, the show/hide functions should be used.
+``` Swift
+insert(viewController: viewController4,
+           edgeInsets: UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8),
+                   at: .after(viewController3))
+```
+
+
 
 Remove a child view controller. NB: Might be easier to just add all VCs you were planning to use and then just show and hide them as needed. See below.
 
