@@ -221,8 +221,10 @@ open class ScrollingStackViewController: UIViewController {
         }
         
         animate({
-            viewController.view.alpha = 1
-            viewController.view.isHidden = false
+            if let view = self.arrangedView(for: viewController) {
+                view.alpha = 1
+                view.isHidden = false
+            }
         }, { isFinished in
             if isFinished {
                 action?()
