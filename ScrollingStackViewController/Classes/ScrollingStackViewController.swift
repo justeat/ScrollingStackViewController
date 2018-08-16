@@ -60,11 +60,7 @@ open class ScrollingStackViewController: UIViewController {
     public var animate = ScrollingStackViewController.defaultAnimate
     
     private var viewDidLayoutSubviewsClosure: (() -> Void)?
-    
-    private var maxOffsetY: CGFloat {
-        return self.scrollView.contentSize.height - self.scrollView.frame.size.height
-    }
-    
+
     static public func defaultScrollAnimate(_ animations: @escaping () -> (), completion: ((Bool) -> Void)?) {
         
         UIView.animate(withDuration: 0.75,
@@ -79,9 +75,19 @@ open class ScrollingStackViewController: UIViewController {
     public var scrollAnimate = ScrollingStackViewController.defaultScrollAnimate
     
     override open func viewDidLoad() {
-        
         super.viewDidLoad()
-        
+        prepareViews()
+        addInitialConstraints()
+    }
+    
+    override open func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        viewDidLayoutSubviewsClosure?()
+    }
+    
+    var stackViewConstraints = [NSLayoutConstraint]()
+    
+    private func prepareViews() {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         stackViewBackgroundView.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -91,9 +97,10 @@ open class ScrollingStackViewController: UIViewController {
         scrollView.addSubview(stackView)
         
         stackView.axis = .vertical
-        
-        stackViewBackgroundView.backgroundColor = UIColor.clear
-        
+        stackViewBackgroundView.backgroundColor = .clear
+    }
+    
+    private func addInitialConstraints() {
         let views = ["scrollView" : scrollView,
                      "stackViewBackgroundView" : stackViewBackgroundView,
                      ] as [String : Any]
@@ -108,15 +115,8 @@ open class ScrollingStackViewController: UIViewController {
         constraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|[stackViewBackgroundView]|", options: [], metrics: nil, views: views)
         constraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|[stackViewBackgroundView(==scrollView)]|", options: [], metrics: nil, views: views)
         
-        NSLayoutConstraint.activate(constraints)
+        constraints.activate()
     }
-    
-    override open func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        viewDidLayoutSubviewsClosure?()
-    }
-    
-    var stackViewConstraints = [NSLayoutConstraint]()
     
     private func pinStackView(withBorderWidth borderWidth: CGFloat) {
         
@@ -131,7 +131,7 @@ open class ScrollingStackViewController: UIViewController {
         
         stackViewConstraints += [stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -borderWidth * 2)]
         
-        stackViewConstraints.forEach { $0.isActive = true }
+        stackViewConstraints.activate()
     }
     
     open func add(viewController: UIViewController) {
@@ -178,39 +178,15 @@ open class ScrollingStackViewController: UIViewController {
     }
     
     open func insert(viewController: UIViewController, edgeInsets: UIEdgeInsets?, at index: Int) {
-
-        addChildViewController(viewController)
-        viewController.didMove(toParentViewController: self)
-        
-        if let edgeInsets = edgeInsets {
-            
-            let childView: UIView = viewController.view
-            let containerView = UIView()
-            containerView.translatesAutoresizingMaskIntoConstraints = false
-            childView.translatesAutoresizingMaskIntoConstraints = false
-            containerView.addSubview(childView)
-            
-            let constraints = [
-                childView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: edgeInsets.top),
-                childView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: edgeInsets.left),
-                containerView.bottomAnchor.constraint(equalTo: childView.bottomAnchor, constant: edgeInsets.bottom),
-                containerView.trailingAnchor.constraint(equalTo: childView.trailingAnchor, constant: edgeInsets.right),
-                ]
-            
-            NSLayoutConstraint.activate(constraints)
-            stackView.insertArrangedSubview(containerView, at: index)
-            
-        } else {
-            stackView.insertArrangedSubview(viewController.view, at: index)
-        }
+        add(viewController, addingView: false)
+        stackView.insertArrangedSubview(viewController.view(withEdgeInsets: edgeInsets), at: index)
     }
     
     open func remove(viewController: UIViewController) {
         guard let arrangedView = arrangedView(for: viewController) else { return }
         stackView.removeArrangedSubview(arrangedView)
         
-        viewController.willMove(toParentViewController: nil)
-        viewController.removeFromParentViewController()
+        viewController.removeAsChild(removingView: false)
     }
     
     open func show(viewController: UIViewController,
@@ -251,11 +227,11 @@ open class ScrollingStackViewController: UIViewController {
     open func scrollTo(viewController: UIViewController, _ action:(() -> Void)? = nil) {
         
         //check if viewDidLayoutSubviews finished to resize scrollview
-        if self.isArranged(view: viewController.view), self.maxOffsetY > 0  {
+        if self.isArranged(view: viewController.view), self.scrollView.maxOffsetY > 0  {
             self.scrollTo(view: viewController.view, {
                 action?()
             })
-        } else if let superview = viewController.view.superview, superview != stackView, self.isArranged(view: superview), self.maxOffsetY > 0 {
+        } else if let superview = viewController.view.superview, superview != stackView, self.isArranged(view: superview), self.scrollView.maxOffsetY > 0 {
             self.scrollTo(view: superview, {
                 action?()
             })
@@ -272,7 +248,7 @@ open class ScrollingStackViewController: UIViewController {
     private func scrollTo(view: UIView, _ finished: @escaping (() -> Void)) {
         
         scrollAnimate({
-            let offsetY = (view.frame.origin.y >= self.maxOffsetY) ? self.maxOffsetY : view.frame.origin.y
+            let offsetY = (view.frame.origin.y >= self.scrollView.maxOffsetY) ? self.scrollView.maxOffsetY : view.frame.origin.y
             self.scrollView.contentOffset = CGPoint(x: view.frame.origin.x, y: offsetY)
         }, { isFinished in
             if isFinished {
