@@ -208,8 +208,9 @@ open class ScrollingStackViewController: UIViewController {
     open func remove(viewController: UIViewController) {
         guard let arrangedView = arrangedView(for: viewController) else { return }
         stackView.removeArrangedSubview(arrangedView)
-        
+
         viewController.willMove(toParentViewController: nil)
+        arrangedView.removeFromSuperview()
         viewController.removeFromParentViewController()
     }
     
