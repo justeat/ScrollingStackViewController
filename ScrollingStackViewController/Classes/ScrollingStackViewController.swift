@@ -154,33 +154,33 @@ open class ScrollingStackViewController: UIViewController {
             insertionIndex = 0
             
         case .end:
-            insertionIndex = childViewControllers.count
+            insertionIndex = children.count
             
         case .index(let index):
-            insertionIndex =  min(Int(index), childViewControllers.count)
+            insertionIndex =  min(Int(index), children.count)
             
         case .after(let afterViewController):
             if let afterViewIndex = arrangedViewOrContainerIndex(for: afterViewController.view) {
                 insertionIndex = afterViewIndex + 1
             } else {
-                insertionIndex = childViewControllers.count
+                insertionIndex = children.count
             }
             
         case .before(let beforeViewController):
             if let beforeViewIndex = arrangedViewOrContainerIndex(for: beforeViewController.view) {
                 insertionIndex = beforeViewIndex
             } else {
-                insertionIndex = childViewControllers.count
+                insertionIndex = children.count
             }
         }
             
-        insert(viewController: viewController, edgeInsets: edgeInsets, at: insertionIndex ?? childViewControllers.count)
+        insert(viewController: viewController, edgeInsets: edgeInsets, at: insertionIndex ?? children.count)
     }
     
     open func insert(viewController: UIViewController, edgeInsets: UIEdgeInsets?, at index: Int) {
 
-        addChildViewController(viewController)
-        viewController.didMove(toParentViewController: self)
+        addChild(viewController)
+        viewController.didMove(toParent: self)
         
         if let edgeInsets = edgeInsets {
             
@@ -209,9 +209,9 @@ open class ScrollingStackViewController: UIViewController {
         guard let arrangedView = arrangedView(for: viewController) else { return }
         stackView.removeArrangedSubview(arrangedView)
 
-        viewController.willMove(toParentViewController: nil)
+        viewController.willMove(toParent: nil)
         arrangedView.removeFromSuperview()
-        viewController.removeFromParentViewController()
+        viewController.removeFromParent()
     }
     
     open func show(viewController: UIViewController,
@@ -219,7 +219,7 @@ open class ScrollingStackViewController: UIViewController {
                    _ action: (() -> Void)? = nil) {
         
         
-        if let insertion = insertion, !isArrangedOrContained(view: viewController.view) || !childViewControllers.contains(viewController) {
+        if let insertion = insertion, !isArrangedOrContained(view: viewController.view) || !children.contains(viewController) {
             insert(viewController: viewController, edgeInsets: insertion.insets, at: insertion.position)
         }
         

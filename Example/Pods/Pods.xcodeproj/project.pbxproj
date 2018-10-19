@@ -40,15 +40,15 @@
 		069145D3BB377C98C73FE37836CDD76F /* ScrollingStackViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ScrollingStackViewController.xcconfig; sourceTree = "<group>"; };
 		08D1A0AE84B0EF7F1E8288E6577618E3 /* Pods-ScrollingStackViewController_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ScrollingStackViewController_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		0A7BCD0966BB07589BBF13AE9F977FFB /* ScrollingStackViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ScrollingStackViewController-umbrella.h"; sourceTree = "<group>"; };
-		0B73FD4FCC83EE093E130B4183F406A8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		0DC2C7EB867D2C55C7122C2CECA75FD3 /* ScrollingStackViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ScrollingStackViewController.framework; path = ScrollingStackViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B73FD4FCC83EE093E130B4183F406A8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		0DC2C7EB867D2C55C7122C2CECA75FD3 /* ScrollingStackViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScrollingStackViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D88BA078FA16A4093A588031B6A48CC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		206046D77A9EB19178AAE8B0D3DCAB58 /* Pods-ScrollingStackViewController_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ScrollingStackViewController_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		22C9D6241B9B2EB06A29F58BB9F0D6B3 /* Pods_ScrollingStackViewController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ScrollingStackViewController_Tests.framework; path = "Pods-ScrollingStackViewController_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22C9D6241B9B2EB06A29F58BB9F0D6B3 /* Pods_ScrollingStackViewController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScrollingStackViewController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A4F2990C43611A7E7E1246750F97A94 /* ScrollingStackViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ScrollingStackViewController-prefix.pch"; sourceTree = "<group>"; };
-		2EDEA27328428A3F2A056304FFF69483 /* ScrollingStackViewController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = ScrollingStackViewController.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2EDEA27328428A3F2A056304FFF69483 /* ScrollingStackViewController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = ScrollingStackViewController.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		349858655F3180648D1BEA29D060C8A9 /* Pods-ScrollingStackViewController_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ScrollingStackViewController_Tests.modulemap"; sourceTree = "<group>"; };
-		4C17125603C70E65A494436E3D5B6C0B /* Pods_ScrollingStackViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ScrollingStackViewController_Example.framework; path = "Pods-ScrollingStackViewController_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C17125603C70E65A494436E3D5B6C0B /* Pods_ScrollingStackViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScrollingStackViewController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F4BAF5DBF5E720FD916CC273EB3B95F /* Pods-ScrollingStackViewController_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ScrollingStackViewController_Tests-umbrella.h"; sourceTree = "<group>"; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		60D5C137F6E829692917BD1BA964BCEA /* Pods-ScrollingStackViewController_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ScrollingStackViewController_Example-frameworks.sh"; sourceTree = "<group>"; };
@@ -60,8 +60,8 @@
 		6F0D45038715FA218FEA458FE02BC933 /* Pods-ScrollingStackViewController_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ScrollingStackViewController_Tests-dummy.m"; sourceTree = "<group>"; };
 		772198DD37180653C201F6942E36CB4A /* Pods-ScrollingStackViewController_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ScrollingStackViewController_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		8708AA7D28F46985C8432D8380DFFEC7 /* Pods-ScrollingStackViewController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ScrollingStackViewController_Example.release.xcconfig"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9EA982813114E3DE73E6F6EA28BD6F3F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9EA982813114E3DE73E6F6EA28BD6F3F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AA877DCE0957E0B4BF007D8965EB7567 /* Pods-ScrollingStackViewController_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ScrollingStackViewController_Example-dummy.m"; sourceTree = "<group>"; };
 		BFD54CE3C3163335D400BA0DD6F4F870 /* Pods-ScrollingStackViewController_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ScrollingStackViewController_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C70B5048E29692E8E5AD9A980CC0549E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -318,6 +318,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
+				TargetAttributes = {
+					D184B7DA19B20AC6267654DC0F0941EE = {
+						LastSwiftMigration = 1000;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -537,7 +542,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -639,7 +644,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
