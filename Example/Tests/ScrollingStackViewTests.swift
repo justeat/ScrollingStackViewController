@@ -64,22 +64,25 @@ class ScrollingStackViewTests: XCTestCase {
         let vc = Factory.createScrollingStackViewController(window: window)
         let height = vc.view.frame.height
         
-        let child1 = Factory.createStubViewController(height: height)
-        let child2 = Factory.createStubViewController(height: height)
+        let arrangedVC = Factory.createStubViewController(height: height)
+        let containedVC = Factory.createStubViewController(height: height)
         let edgeInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         
-        vc.add(viewController: child1)
-        vc.show(viewController: child1)
-        vc.show(viewController: child2, insertIfNeeded: (position: .end, insets: edgeInset))
+        vc.add(viewController: arrangedVC)
+        vc.show(viewController: arrangedVC)
+        vc.show(viewController: containedVC, insertIfNeeded: (position: .end, insets: edgeInset))
         XCTAssert(vc.stackView.arrangedSubviews.count == 2)
         
-        vc.remove(viewController: child1)
-        XCTAssert(vc.stackView.arrangedSubviews.count == 1)
-        XCTAssert(child1.view.superview == nil)
+        let firstArrangedView = arrangedVC.view!
+        let secondArrangedView = containedVC.view.superview!
         
-        vc.remove(viewController: child2)
+        vc.remove(viewController: arrangedVC)
+        XCTAssert(vc.stackView.arrangedSubviews.count == 1)
+        XCTAssert(firstArrangedView.superview == nil)
+        
+        vc.remove(viewController: containedVC)
         XCTAssert(vc.stackView.arrangedSubviews.count == 0)
-        XCTAssert(child2.view.superview == nil)
+        XCTAssert(secondArrangedView.superview == nil)
     }
 
     func testComplexScrolling() {
