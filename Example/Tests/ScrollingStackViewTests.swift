@@ -73,16 +73,13 @@ class ScrollingStackViewTests: XCTestCase {
         vc.show(viewController: containedVC, insertIfNeeded: (position: .end, insets: edgeInset))
         XCTAssert(vc.stackView.arrangedSubviews.count == 2)
         
-        let firstArrangedView = arrangedVC.view!
-        let secondArrangedView = containedVC.view.superview!
-        
         vc.remove(viewController: arrangedVC)
         XCTAssert(vc.stackView.arrangedSubviews.count == 1)
-        XCTAssert(firstArrangedView.superview == nil)
+        XCTAssert(arrangedVC.view.superview == nil)
         
         vc.remove(viewController: containedVC)
         XCTAssert(vc.stackView.arrangedSubviews.count == 0)
-        XCTAssert(secondArrangedView.superview == nil)
+        XCTAssert(containedVC.view.superview == nil)
     }
 
     func testComplexScrolling() {
