@@ -21,6 +21,7 @@ This view controller is more suitable than an UITableViewController when creatin
   s.source           = { :git => 'https://github.com/justeat/ScrollingStackViewController.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.0'
+  s.swift_version = '4.2'
 
   s.source_files = 'ScrollingStackViewController/Classes/**/*'
 end
