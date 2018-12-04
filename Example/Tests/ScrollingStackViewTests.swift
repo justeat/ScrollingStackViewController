@@ -59,6 +59,28 @@ class ScrollingStackViewTests: XCTestCase {
         vc.remove(viewController: child2)
         XCTAssert(vc.stackView.arrangedSubviews.count == 1)
     }
+    
+    func testRemoveViewControllers() {
+        let vc = Factory.createScrollingStackViewController(window: window)
+        let height = vc.view.frame.height
+        
+        let arrangedVC = Factory.createStubViewController(height: height)
+        let containedVC = Factory.createStubViewController(height: height)
+        let edgeInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        
+        vc.add(viewController: arrangedVC)
+        vc.show(viewController: arrangedVC)
+        vc.show(viewController: containedVC, insertIfNeeded: (position: .end, insets: edgeInset))
+        XCTAssert(vc.stackView.arrangedSubviews.count == 2)
+        
+        vc.remove(viewController: arrangedVC)
+        XCTAssert(vc.stackView.arrangedSubviews.count == 1)
+        XCTAssert(arrangedVC.view.superview == nil)
+        
+        vc.remove(viewController: containedVC)
+        XCTAssert(vc.stackView.arrangedSubviews.count == 0)
+        XCTAssert(containedVC.view.superview == nil)
+    }
 
     func testComplexScrolling() {
         
