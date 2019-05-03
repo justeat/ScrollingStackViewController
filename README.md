@@ -2,7 +2,7 @@
 
 # ScrollingStackViewController
 
-[![Build Status](https://www.bitrise.io/app/9c553b5f3803d738/status.svg?token=qaH7Lga8U2pUXGOVi617zg&branch=master)](https://www.bitrise.io/app/9c553b5f3803d738)
+[![Build Status](https://app.bitrise.io/app/9c553b5f3803d738/status.svg?token=qaH7Lga8U2pUXGOVi617zg&branch=master)](https://app.bitrise.io/app/9c553b5f3803d738)
 [![Version](https://img.shields.io/cocoapods/v/ScrollingStackViewController.svg?style=flat)](http://cocoapods.org/pods/ScrollingStackViewController)
 [![License](https://img.shields.io/cocoapods/l/ScrollingStackViewController.svg?style=flat)](http://cocoapods.org/pods/ScrollingStackViewController)
 [![Platform](https://img.shields.io/cocoapods/p/ScrollingStackViewController.svg?style=flat)](http://cocoapods.org/pods/ScrollingStackViewController)
