@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ScrollingStackViewController: 465495a25f461a9506cf5b3fe2681abbf7f3fc79
+  ScrollingStackViewController: 1ebb4334f209603a04f4addb62f7c1ee2658760c
 
 PODFILE CHECKSUM: 1107023c97aaa6562f2eb38595e37b1267bba2b1
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.6.2

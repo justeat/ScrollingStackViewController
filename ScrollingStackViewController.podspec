@@ -17,7 +17,7 @@ This view controller is more suitable than an UITableViewController when creatin
 
   s.homepage         = 'https://github.com/justeat/ScrollingStackViewController'
   s.license          = { :type => 'Apache 2.0', :file => 'LICENSE' }
-  s.author           = { 'Just Eat iOS team' => 'justeat.ios.team@gmail.com', 'Maciej Trybilo' => 'maciej.trybilo@just-eat.com', 'Julien Regnauld' => 'julien.regnauld@just-eat.com' }
+  s.author           = { 'Maciej Trybilo' => 'maciej.trybilo@just-eat.com', 'Julien Regnauld' => 'julien.regnauld@just-eat.com' }
   s.source           = { :git => 'https://github.com/justeat/ScrollingStackViewController.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.0'

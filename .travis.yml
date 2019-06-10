@@ -1,0 +1,15 @@
+# references:
+# * https://www.objc.io/issues/6-build-tools/travis-ci/
+# * https://github.com/supermarin/xcpretty#usage
+# * https://docs.travis-ci.com/user/languages/objective-c/
+
+rvm:
+ - 2.6.3
+ 
+osx_image: xcode10.2
+language: swift
+
+script:
+- bundle exec pod install --project-directory=Example
+- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/ScrollingStackViewController.xcworkspace -scheme ScrollingStackViewController-Example ONLY_ACTIVE_ARCH=NO -destination 'platform=iOS Simulator,OS=12.2,name=iPhone X'
+- bundle exec pod lib lint --allow-warnings
