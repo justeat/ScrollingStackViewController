@@ -202,34 +202,27 @@ open class ScrollingStackViewController: UIViewController {
         }
     }
     
-    open func show(_ viewController: UIViewController, insertIfNeededWith insertionParameters: (position: Position, insets: UIEdgeInsets)? = nil, animated: Bool = true, completionHandler: ((Bool) -> Void)? = nil) {
+    /// Use this function if you want to show a view controller.
+    ///
+    /// - Parameters:
+    ///   - viewController: The viewController that has to be shown.
+    ///   - insertionParameters: The position and the insets that has to be used to insert the view controller.
+    ///   - animated: True is should be performed using the animation. False otherwise.
+    ///   - completionHandler: A completion handler called when the animation finish or immidiatly after adding the view controller if animated parameter is false.
+    ///
+    /// - Note: if you pass nil to the `insertIfNeededWith` the view controller will be shown only if it is already in the view hierarchy.
+    open func show(_ viewController: UIViewController, insertIfNeededWith insertionParameters: (position: Position, insets: UIEdgeInsets)?, animated: Bool = true, completionHandler: ((Bool) -> Void)? = nil) {
         
         if let insertionParameters = insertionParameters, !isArrangedOrContained(view: viewController.view) || !children.contains(viewController) {
             insert(viewController: viewController, edgeInsets: insertionParameters.insets, at: insertionParameters.position)
         }
         
-        if animated {
-            animate({
-                self.show(viewController)
-            }, { isFinished in
-                completionHandler?(isFinished)
-            })
-        } else {
-            show(viewController)
-            completionHandler?(true)
-        }
-    }
-
-    private func show(_ viewController: UIViewController) {
-        if let view = self.arrangedView(for: viewController) {
-            view.alpha = 1
-            view.isHidden = false
-        }
+        show(viewController, animated: animated, completionHandler: completionHandler)
     }
     
     //MARK: - View controllers removal
     
-    private func remove(_ viewController: UIViewController) {
+    private func remove(arranged viewController: UIViewController) {
         guard let arrangedView = arrangedView(for: viewController) else { return }
         arrangedView.removeFromSuperview()
         if arrangedView != viewController.view { //This happens when the view controller was added with edges. In this case it is added to a container view instead of adding it directly.
@@ -242,28 +235,47 @@ open class ScrollingStackViewController: UIViewController {
     
     open func remove(_ viewController: UIViewController, animated: Bool = false, completionHandler: ((Bool) -> Void)? = nil) {
         if !animated {
-            remove(viewController)
+            remove(arranged: viewController)
             completionHandler?(true)
             return
         }
         
-        guard let arrangedView = arrangedView(for: viewController) else { return }
-        hide(viewController) { [weak self] isFinished in
-            self?.remove(viewController)
+        hide(viewController, animated: true) { [weak self] isFinished in
+            self?.remove(arranged: viewController)
             completionHandler?(isFinished)
         }
     }
     
-    open func hide(_ viewController: UIViewController, completionHandler: ((Bool) -> Void)? = nil) {
+    //MARK: - Change view visibility
+
+    open func show(_ viewController: UIViewController, animated: Bool = true, completionHandler: ((Bool) -> Void)? = nil) {
+        set(viewController, hidden: false, animated: animated, completionHandler: completionHandler)
+    }
+    
+    open func hide(_ viewController: UIViewController, animated: Bool = false, completionHandler: ((Bool) -> Void)? = nil) {
+        set(viewController, hidden: true, animated: animated, completionHandler: completionHandler)
+    }
+
+    open func set(_ viewController: UIViewController, hidden: Bool, animated: Bool, completionHandler: ((Bool) -> Void)? = nil) {
+        guard let view = self.arrangedView(for: viewController) else {
+            completionHandler?(false)
+            return
+        }
         
-        animate({
-            if let view = self.arrangedView(for: viewController) {
-                view.alpha = 0
-                view.isHidden = true
-            }
-        }, { isFinished in
-            completionHandler?(isFinished)
-        })
+        let toAlpha: CGFloat = hidden ? 0 : 1
+        
+        if !animated {
+            view.alpha = toAlpha
+            view.isHidden = hidden
+            completionHandler?(true)
+        } else {
+            animate({
+                view.alpha = toAlpha
+                view.isHidden = hidden
+            }, { isFinished in
+                completionHandler?(isFinished)
+            })
+        }
     }
     
     //MARK: - Scrolling

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ScrollingStackViewController'
-  s.version          = '4.2.0'
+  s.version          = '5.0.0'
   s.summary          = 'A view controller that uses root views of child view controllers as views in a UIStackView.'
 
   s.description      = <<-DESC
@@ -20,7 +20,7 @@ This view controller is more suitable than an UITableViewController when creatin
   s.author           = { 'Maciej Trybilo' => 'maciej.trybilo@just-eat.com', 'Julien Regnauld' => 'julien.regnauld@just-eat.com' }
   s.source           = { :git => 'https://github.com/justeat/ScrollingStackViewController.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '11.0'
   s.swift_version = '5.0'
 
   s.source_files = 'ScrollingStackViewController/Classes/**/*'

@@ -14,7 +14,8 @@ class ViewController: ScrollingStackViewController {
     @IBOutlet weak var hideShowButton: UIBarButtonItem!
     
     var segments = [SegmentController]()
-    
+    var isExampleViewControllerHidden = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,25 +51,14 @@ class ViewController: ScrollingStackViewController {
         borderWidth = 0        
     }
     
-    var isHiding = false
-    
-    @IBAction func hideShowTapped(_ sender: Any) {
-        
-        isHiding = !isHiding
-        
-        if isHiding {
-            
-            hideShowButton.title = "Show 5"
-            hide(self.segments[4])
-        } else {
-            
-            hideShowButton.title = "Hide 5"
-            show(self.segments[4])
+    @IBAction func hideShowTapped(_ sender: UIButton) {
+        isExampleViewControllerHidden.toggle()
+        set(self.segments[4], hidden: isExampleViewControllerHidden, animated: true) { _ in
+            self.hideShowButton.title = self.isExampleViewControllerHidden ? "Show 5" : "Hide 5"
         }
     }
 
     @IBAction func scrollTo8Tapped(_ sender: Any) {
-        
         scrollTo(viewController: segments[7])
     }
 }

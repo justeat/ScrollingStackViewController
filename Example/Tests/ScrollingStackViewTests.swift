@@ -27,7 +27,7 @@ class ScrollingStackViewTests: XCTestCase {
         let expectation = self.expectation(description: "Expect scrolling to finish")
         
         vc.scrollTo(viewController: child2, {
-            XCTAssertEqual(vc.scrollView.contentOffset.y, vc.view.frame.height - vc.topLayoutGuide.length)
+            XCTAssertEqual(vc.scrollView.contentOffset.y, vc.view.frame.height - vc.view.safeAreaInsets.top)
             expectation.fulfill()
         })
 
@@ -127,7 +127,7 @@ class ScrollingStackViewTests: XCTestCase {
         let expectation = self.expectation(description: "Expect scrolling to finish")
         
         result.viewController.scrollTo(viewController: result.children[scrollIndex], {
-            XCTAssertEqual(result.viewController.scrollView.contentOffset.y, (height * CGFloat(scrollIndex)) - result.viewController.topLayoutGuide.length)
+            XCTAssertEqual(result.viewController.scrollView.contentOffset.y, (height * CGFloat(scrollIndex)) - result.viewController.view.safeAreaInsets.top)
             expectation.fulfill()
         })
         
@@ -169,7 +169,7 @@ class ScrollingStackViewTests: XCTestCase {
         let expectation = self.expectation(description: "Expect scrolling to finish")
         
         result.viewController.scrollTo(viewController: result.children[scrollIndex], {
-            XCTAssertEqual(result.viewController.scrollView.contentOffset.y, ((height + insets.top + insets.bottom) * CGFloat(scrollIndex)) - result.viewController.topLayoutGuide.length)
+            XCTAssertEqual(result.viewController.scrollView.contentOffset.y, ((height + insets.top + insets.bottom) * CGFloat(scrollIndex)) - result.viewController.view.safeAreaInsets.top)
             expectation.fulfill()
         })
         
