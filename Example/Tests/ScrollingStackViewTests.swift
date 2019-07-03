@@ -46,10 +46,10 @@ class ScrollingStackViewTests: XCTestCase {
         vc.add(viewController: child1)
         XCTAssert(vc.stackView.arrangedSubviews.count == 1)
         
-        vc.show(viewController: child2)
+        vc.show(child2)
         XCTAssert(vc.stackView.arrangedSubviews.count == 1)
         
-        vc.show(viewController: child2, insertIfNeeded: (position: .end, insets: .zero))
+        vc.show(child2, insertIfNeededWith: (position: .end, insets: .zero))
         XCTAssert(vc.stackView.arrangedSubviews.count == 2)
     
         vc.hide(viewController: child1)
@@ -69,8 +69,8 @@ class ScrollingStackViewTests: XCTestCase {
         let edgeInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         
         vc.add(viewController: arrangedVC)
-        vc.show(viewController: arrangedVC)
-        vc.show(viewController: containedVC, insertIfNeeded: (position: .end, insets: edgeInset))
+        vc.show(arrangedVC)
+        vc.show(containedVC, insertIfNeededWith: (position: .end, insets: edgeInset))
         XCTAssert(vc.stackView.arrangedSubviews.count == 2)
         
         vc.remove(viewController: arrangedVC)

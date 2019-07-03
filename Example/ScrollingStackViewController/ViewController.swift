@@ -63,7 +63,7 @@ class ViewController: ScrollingStackViewController {
         } else {
             
             hideShowButton.title = "Hide 5"
-            show(viewController: self.segments[4])
+            show(self.segments[4])
         }
     }
 
