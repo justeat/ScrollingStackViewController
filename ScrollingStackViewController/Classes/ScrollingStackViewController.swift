@@ -202,7 +202,7 @@ open class ScrollingStackViewController: UIViewController {
         }
     }
     
-    open func show(_ viewController: UIViewController, insertIfNeededWith insertionParameters: (position: Position, insets: UIEdgeInsets)? = nil, animated: Bool = true, completionHandler: (() -> Void)? = nil) {
+    open func show(_ viewController: UIViewController, insertIfNeededWith insertionParameters: (position: Position, insets: UIEdgeInsets)? = nil, animated: Bool = true, completionHandler: ((Bool) -> Void)? = nil) {
         
         if let insertionParameters = insertionParameters, !isArrangedOrContained(view: viewController.view) || !children.contains(viewController) {
             insert(viewController: viewController, edgeInsets: insertionParameters.insets, at: insertionParameters.position)
@@ -212,13 +212,11 @@ open class ScrollingStackViewController: UIViewController {
             animate({
                 self.show(viewController)
             }, { isFinished in
-                if isFinished {
-                    completionHandler?()
-                }
+                completionHandler?(isFinished)
             })
         } else {
             show(viewController)
-            completionHandler?()
+            completionHandler?(true)
         }
     }
 
@@ -231,10 +229,10 @@ open class ScrollingStackViewController: UIViewController {
     
     //MARK: - View controllers removal
     
-    open func remove(viewController: UIViewController) {
+    private func remove(_ viewController: UIViewController) {
         guard let arrangedView = arrangedView(for: viewController) else { return }
         arrangedView.removeFromSuperview()
-        if arrangedView != viewController.view {
+        if arrangedView != viewController.view { //This happens when the view controller was added with edges. In this case it is added to a container view instead of adding it directly.
             viewController.view.removeFromSuperview()
         }
         
@@ -242,22 +240,21 @@ open class ScrollingStackViewController: UIViewController {
         viewController.removeFromParent()
     }
     
-    func remove(_ viewController: UIViewController, animated: Bool) {
+    open func remove(_ viewController: UIViewController, animated: Bool = false, completionHandler: ((Bool) -> Void)? = nil) {
         if !animated {
-            remove(viewController: viewController)
+            remove(viewController)
+            completionHandler?(true)
             return
         }
         
-        guard let containerView = arrangedView(for: viewController) else { return }
-        hide(viewController: viewController) { [weak self] in
-            if (viewController.view.superview == containerView) {
-                self?.remove(viewController: viewController)
-            }
-            containerView.removeFromSuperview()
+        guard let arrangedView = arrangedView(for: viewController) else { return }
+        hide(viewController) { [weak self] isFinished in
+            self?.remove(viewController)
+            completionHandler?(isFinished)
         }
     }
     
-    open func hide(viewController: UIViewController, _ action: (() -> Void)? = nil) {
+    open func hide(_ viewController: UIViewController, completionHandler: ((Bool) -> Void)? = nil) {
         
         animate({
             if let view = self.arrangedView(for: viewController) {
@@ -265,9 +262,7 @@ open class ScrollingStackViewController: UIViewController {
                 view.isHidden = true
             }
         }, { isFinished in
-            if isFinished {
-                action?()
-            }
+            completionHandler?(isFinished)
         })
     }
     

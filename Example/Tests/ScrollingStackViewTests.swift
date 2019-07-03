@@ -52,14 +52,44 @@ class ScrollingStackViewTests: XCTestCase {
         vc.show(child2, insertIfNeededWith: (position: .end, insets: .zero))
         XCTAssert(vc.stackView.arrangedSubviews.count == 2)
     
-        vc.hide(viewController: child1)
+        vc.hide(child1)
         XCTAssert(vc.stackView.arrangedSubviews.count == 2)
         XCTAssert(vc.arrangedView(for: child1)!.isHidden)
         
-        vc.remove(viewController: child2)
-        XCTAssert(vc.stackView.arrangedSubviews.count == 1)
+        vc.remove(child2, animated: false)
+        XCTAssertEqual(vc.stackView.arrangedSubviews.count, 1)
     }
-    
+
+    func testShowHideAnimatedViewControllers() {
+        let vc = Factory.createScrollingStackViewController(window: window)
+        
+        let height = vc.view.frame.height
+        
+        let child1 = Factory.createStubViewController(height: height)
+        let child2 = Factory.createStubViewController(height: height)
+        XCTAssert(vc.stackView.arrangedSubviews.count == 0)
+        
+        vc.add(viewController: child1)
+        XCTAssert(vc.stackView.arrangedSubviews.count == 1)
+        
+        vc.show(child2)
+        XCTAssert(vc.stackView.arrangedSubviews.count == 1)
+        
+        vc.show(child2, insertIfNeededWith: (position: .end, insets: .zero))
+        XCTAssert(vc.stackView.arrangedSubviews.count == 2)
+        
+        vc.hide(child1)
+        XCTAssert(vc.stackView.arrangedSubviews.count == 2)
+        XCTAssert(vc.arrangedView(for: child1)!.isHidden)
+        
+        let exp = expectation(description: "HideExpectation")
+        vc.remove(child2, animated: true) { _ in
+            exp.fulfill()
+        }
+        waitForExpectations(timeout: 1, handler: nil)
+        XCTAssertEqual(vc.stackView.arrangedSubviews.count, 1)
+    }
+
     func testRemoveViewControllers() {
         let vc = Factory.createScrollingStackViewController(window: window)
         let height = vc.view.frame.height
@@ -73,12 +103,12 @@ class ScrollingStackViewTests: XCTestCase {
         vc.show(containedVC, insertIfNeededWith: (position: .end, insets: edgeInset))
         XCTAssert(vc.stackView.arrangedSubviews.count == 2)
         
-        vc.remove(viewController: arrangedVC)
-        XCTAssert(vc.stackView.arrangedSubviews.count == 1)
+        vc.remove(arrangedVC, animated: false)
+        XCTAssertEqual(vc.stackView.arrangedSubviews.count, 1)
         XCTAssert(arrangedVC.view.superview == nil)
         
-        vc.remove(viewController: containedVC)
-        XCTAssert(vc.stackView.arrangedSubviews.count == 0)
+        vc.remove(containedVC, animated: false)
+        XCTAssertEqual(vc.stackView.arrangedSubviews.count, 0)
         XCTAssert(containedVC.view.superview == nil)
     }
 

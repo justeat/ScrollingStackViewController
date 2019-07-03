@@ -75,15 +75,41 @@ class ScrollingStackViewInsertionTests: XCTestCase {
         vc.show(insertingChild, insertIfNeededWith: (position: .index(0), insets: .zero))
         XCTAssert(vc.arrangedViewOrContainerIndex(for: insertingChild.view) == 0, "Ordering should be InsertingChild, Child A, Child B")
         
-        vc.remove(viewController: insertingChild)
-        vc.show(insertingChild, insertIfNeededWith: (position: .index(2), insets: .zero))
+        vc.remove(insertingChild, animated: false)
+        vc.show(insertingChild, insertIfNeededWith: (position: .index(2), insets: .zero), animated: false)
         XCTAssert(vc.arrangedViewOrContainerIndex(for: insertingChild.view) == 2, "Ordering should be Child A, Child B, InsertingChild")
         
-        vc.remove(viewController: insertingChild)
-        vc.show(insertingChild, insertIfNeededWith: (position: .index(5), insets: .zero))
+        vc.remove(insertingChild, animated: false)
+        vc.show(insertingChild, insertIfNeededWith: (position: .index(5), insets: .zero), animated: false)
         XCTAssert(vc.arrangedViewOrContainerIndex(for: insertingChild.view) == 2, "Ordering should be Child A, Child B, InsertingChild")
     }
-    
+
+    func testShow_insertingIfNeeded_animated_atIndex() {
+        vc.insert(viewController: childA, at: 0)
+        vc.insert(viewController: childB, at: 1)
+        
+        vc.show(insertingChild, insertIfNeededWith: (position: .index(0), insets: .zero))
+        XCTAssert(vc.arrangedViewOrContainerIndex(for: insertingChild.view) == 0, "Ordering should be InsertingChild, Child A, Child B")
+        
+        let index2Expectation = expectation(description: "Child2Expectation")
+        vc.remove(insertingChild, animated: true) { _ in
+            self.vc.show(self.insertingChild, insertIfNeededWith: (position: .index(2), insets: .zero)) { _ in
+                index2Expectation.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 1, handler: nil)
+        XCTAssertEqual(vc.arrangedViewOrContainerIndex(for: insertingChild.view), 2, "Ordering should be Child A, Child B, InsertingChild")
+        
+        let index5Expectation = expectation(description: "Child5Expectation")
+        vc.remove(insertingChild, animated: true) { _ in
+            self.vc.show(self.insertingChild, insertIfNeededWith: (position: .index(5), insets: .zero)) { _ in
+                index5Expectation.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 1, handler: nil)
+        XCTAssertEqual(vc.arrangedViewOrContainerIndex(for: insertingChild.view), 2, "Ordering should be Child A, Child B, InsertingChild")
+    }
+
     func testShow_insertingIfNeeded_afterViewViewController() {
         vc.insert(viewController: childA, at: 0)
         vc.insert(viewController: childB, at: 1)

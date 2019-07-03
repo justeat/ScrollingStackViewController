@@ -59,7 +59,7 @@ class ViewController: ScrollingStackViewController {
         if isHiding {
             
             hideShowButton.title = "Show 5"
-            hide(viewController: self.segments[4])
+            hide(self.segments[4])
         } else {
             
             hideShowButton.title = "Hide 5"
