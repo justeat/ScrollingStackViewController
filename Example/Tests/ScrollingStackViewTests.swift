@@ -27,7 +27,13 @@ class ScrollingStackViewTests: XCTestCase {
         let expectation = self.expectation(description: "Expect scrolling to finish")
         
         vc.scrollTo(viewController: child2, {
-            XCTAssertEqual(vc.scrollView.contentOffset.y, vc.view.frame.height - vc.view.safeAreaInsets.top)
+            var safeAreaHeight: CGFloat = 0
+            if #available(iOS 11.0, *) {
+                safeAreaHeight = vc.view.safeAreaInsets.top
+            } else {
+                safeAreaHeight = vc.topLayoutGuide.length
+            }
+            XCTAssertEqual(vc.scrollView.contentOffset.y, vc.view.frame.height - safeAreaHeight)
             expectation.fulfill()
         })
 
@@ -127,7 +133,13 @@ class ScrollingStackViewTests: XCTestCase {
         let expectation = self.expectation(description: "Expect scrolling to finish")
         
         result.viewController.scrollTo(viewController: result.children[scrollIndex], {
-            XCTAssertEqual(result.viewController.scrollView.contentOffset.y, (height * CGFloat(scrollIndex)) - result.viewController.view.safeAreaInsets.top)
+            var safeAreaHeight: CGFloat = 0
+            if #available(iOS 11.0, *) {
+                safeAreaHeight = result.viewController.view.safeAreaInsets.top
+            } else {
+                safeAreaHeight = result.viewController.topLayoutGuide.length
+            }
+            XCTAssertEqual(result.viewController.scrollView.contentOffset.y, (height * CGFloat(scrollIndex)) - safeAreaHeight)
             expectation.fulfill()
         })
         
@@ -169,7 +181,13 @@ class ScrollingStackViewTests: XCTestCase {
         let expectation = self.expectation(description: "Expect scrolling to finish")
         
         result.viewController.scrollTo(viewController: result.children[scrollIndex], {
-            XCTAssertEqual(result.viewController.scrollView.contentOffset.y, ((height + insets.top + insets.bottom) * CGFloat(scrollIndex)) - result.viewController.view.safeAreaInsets.top)
+            var safeAreaHeight: CGFloat = 0
+            if #available(iOS 11.0, *) {
+                safeAreaHeight = result.viewController.view.safeAreaInsets.top
+            } else {
+                safeAreaHeight = result.viewController.topLayoutGuide.length
+            }
+            XCTAssertEqual(result.viewController.scrollView.contentOffset.y, ((height + insets.top + insets.bottom) * CGFloat(scrollIndex)) - safeAreaHeight)
             expectation.fulfill()
         })
         
