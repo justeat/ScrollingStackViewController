@@ -134,6 +134,8 @@ open class ScrollingStackViewController: UIViewController {
         stackViewConstraints.forEach { $0.isActive = true }
     }
     
+    //MARK: - View controllers insertion
+    
     open func add(viewController: UIViewController) {
         insert(viewController: viewController)
     }
@@ -178,37 +180,52 @@ open class ScrollingStackViewController: UIViewController {
     }
     
     open func insert(viewController: UIViewController, edgeInsets: UIEdgeInsets?, at index: Int) {
-
         addChild(viewController)
         viewController.didMove(toParent: self)
         
         if let edgeInsets = edgeInsets {
-            
             let childView: UIView = viewController.view
             let containerView = UIView()
             containerView.translatesAutoresizingMaskIntoConstraints = false
             childView.translatesAutoresizingMaskIntoConstraints = false
             containerView.addSubview(childView)
             
-            let constraints = [
-                childView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: edgeInsets.top),
-                childView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: edgeInsets.left),
-                containerView.bottomAnchor.constraint(equalTo: childView.bottomAnchor, constant: edgeInsets.bottom),
-                containerView.trailingAnchor.constraint(equalTo: childView.trailingAnchor, constant: edgeInsets.right),
-                ]
+            let constraints = [childView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: edgeInsets.top),
+                               childView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: edgeInsets.left),
+                               containerView.bottomAnchor.constraint(equalTo: childView.bottomAnchor, constant: edgeInsets.bottom),
+                               containerView.trailingAnchor.constraint(equalTo: childView.trailingAnchor, constant: edgeInsets.right)]
             
             NSLayoutConstraint.activate(constraints)
             stackView.insertArrangedSubview(containerView, at: index)
-            
         } else {
             stackView.insertArrangedSubview(viewController.view, at: index)
         }
     }
     
-    open func remove(viewController: UIViewController) {
+    /// Use this function if you want to show a view controller.
+    ///
+    /// - Parameters:
+    ///   - viewController: The viewController that has to be shown.
+    ///   - insertionParameters: The position and the insets that has to be used to insert the view controller.
+    ///   - animated: True is should be performed using the animation. False otherwise.
+    ///   - completionHandler: A completion handler called when the animation finish or immidiatly after adding the view controller if animated parameter is false.
+    ///
+    /// - Note: if you pass nil to the `insertIfNeededWith` the view controller will be shown only if it is already in the view hierarchy.
+    open func show(_ viewController: UIViewController, insertIfNeededWith insertionParameters: (position: Position, insets: UIEdgeInsets)?, animated: Bool = true, completionHandler: ((Bool) -> Void)? = nil) {
+        
+        if let insertionParameters = insertionParameters, !isArrangedOrContained(view: viewController.view) || !children.contains(viewController) {
+            insert(viewController: viewController, edgeInsets: insertionParameters.insets, at: insertionParameters.position)
+        }
+        
+        show(viewController, animated: animated, completionHandler: completionHandler)
+    }
+    
+    //MARK: - View controllers removal
+    
+    private func remove(arranged viewController: UIViewController) {
         guard let arrangedView = arrangedView(for: viewController) else { return }
         arrangedView.removeFromSuperview()
-        if arrangedView != viewController.view {
+        if arrangedView != viewController.view { //This happens when the view controller was added with edges. In this case it is added to a container view instead of adding it directly.
             viewController.view.removeFromSuperview()
         }
         
@@ -216,40 +233,52 @@ open class ScrollingStackViewController: UIViewController {
         viewController.removeFromParent()
     }
     
-    open func show(viewController: UIViewController,
-                   insertIfNeeded insertion: (position: Position, insets: UIEdgeInsets)? = nil,
-                   _ action: (() -> Void)? = nil) {
-        
-        
-        if let insertion = insertion, !isArrangedOrContained(view: viewController.view) || !children.contains(viewController) {
-            insert(viewController: viewController, edgeInsets: insertion.insets, at: insertion.position)
+    open func remove(_ viewController: UIViewController, animated: Bool = false, completionHandler: ((Bool) -> Void)? = nil) {
+        if !animated {
+            remove(arranged: viewController)
+            completionHandler?(true)
+            return
         }
         
-        animate({
-            if let view = self.arrangedView(for: viewController) {
-                view.alpha = 1
-                view.isHidden = false
-            }
-        }, { isFinished in
-            if isFinished {
-                action?()
-            }
-        })
+        hide(viewController, animated: true) { [weak self] isFinished in
+            self?.remove(arranged: viewController)
+            completionHandler?(isFinished)
+        }
     }
     
-    open func hide(viewController: UIViewController, _ action: (() -> Void)? = nil) {
-        
-        animate({
-            if let view = self.arrangedView(for: viewController) {
-                view.alpha = 0
-                view.isHidden = true
-            }
-        }, { isFinished in
-            if isFinished {
-                action?()
-            }
-        })
+    //MARK: - Change view visibility
+
+    open func show(_ viewController: UIViewController, animated: Bool = true, completionHandler: ((Bool) -> Void)? = nil) {
+        set(viewController, hidden: false, animated: animated, completionHandler: completionHandler)
     }
+    
+    open func hide(_ viewController: UIViewController, animated: Bool = false, completionHandler: ((Bool) -> Void)? = nil) {
+        set(viewController, hidden: true, animated: animated, completionHandler: completionHandler)
+    }
+
+    open func set(_ viewController: UIViewController, hidden: Bool, animated: Bool, completionHandler: ((Bool) -> Void)? = nil) {
+        guard let view = self.arrangedView(for: viewController) else {
+            completionHandler?(false)
+            return
+        }
+        
+        let toAlpha: CGFloat = hidden ? 0 : 1
+        
+        if !animated {
+            view.alpha = toAlpha
+            view.isHidden = hidden
+            completionHandler?(true)
+        } else {
+            animate({
+                view.alpha = toAlpha
+                view.isHidden = hidden
+            }, { isFinished in
+                completionHandler?(isFinished)
+            })
+        }
+    }
+    
+    //MARK: - Scrolling
     
     open func scrollTo(viewController: UIViewController, _ action:(() -> Void)? = nil) {
         
@@ -283,6 +312,8 @@ open class ScrollingStackViewController: UIViewController {
             }
         })
     }
+    
+    //MARK: - Querying
     
     public func isArranged(view: UIView) -> Bool {
         return arrangedViewIndex(for: view) != nil

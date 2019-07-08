@@ -27,7 +27,13 @@ class ScrollingStackViewTests: XCTestCase {
         let expectation = self.expectation(description: "Expect scrolling to finish")
         
         vc.scrollTo(viewController: child2, {
-            XCTAssertEqual(vc.scrollView.contentOffset.y, vc.view.frame.height - vc.topLayoutGuide.length)
+            var safeAreaHeight: CGFloat = 0
+            if #available(iOS 11.0, *) {
+                safeAreaHeight = vc.view.safeAreaInsets.top
+            } else {
+                safeAreaHeight = vc.topLayoutGuide.length
+            }
+            XCTAssertEqual(vc.scrollView.contentOffset.y, vc.view.frame.height - safeAreaHeight)
             expectation.fulfill()
         })
 
@@ -46,20 +52,50 @@ class ScrollingStackViewTests: XCTestCase {
         vc.add(viewController: child1)
         XCTAssert(vc.stackView.arrangedSubviews.count == 1)
         
-        vc.show(viewController: child2)
+        vc.show(child2)
         XCTAssert(vc.stackView.arrangedSubviews.count == 1)
         
-        vc.show(viewController: child2, insertIfNeeded: (position: .end, insets: .zero))
+        vc.show(child2, insertIfNeededWith: (position: .end, insets: .zero))
         XCTAssert(vc.stackView.arrangedSubviews.count == 2)
     
-        vc.hide(viewController: child1)
+        vc.hide(child1)
         XCTAssert(vc.stackView.arrangedSubviews.count == 2)
         XCTAssert(vc.arrangedView(for: child1)!.isHidden)
         
-        vc.remove(viewController: child2)
-        XCTAssert(vc.stackView.arrangedSubviews.count == 1)
+        vc.remove(child2, animated: false)
+        XCTAssertEqual(vc.stackView.arrangedSubviews.count, 1)
     }
-    
+
+    func testShowHideAnimatedViewControllers() {
+        let vc = Factory.createScrollingStackViewController(window: window)
+        
+        let height = vc.view.frame.height
+        
+        let child1 = Factory.createStubViewController(height: height)
+        let child2 = Factory.createStubViewController(height: height)
+        XCTAssert(vc.stackView.arrangedSubviews.count == 0)
+        
+        vc.add(viewController: child1)
+        XCTAssert(vc.stackView.arrangedSubviews.count == 1)
+        
+        vc.show(child2)
+        XCTAssert(vc.stackView.arrangedSubviews.count == 1)
+        
+        vc.show(child2, insertIfNeededWith: (position: .end, insets: .zero))
+        XCTAssert(vc.stackView.arrangedSubviews.count == 2)
+        
+        vc.hide(child1)
+        XCTAssert(vc.stackView.arrangedSubviews.count == 2)
+        XCTAssert(vc.arrangedView(for: child1)!.isHidden)
+        
+        let exp = expectation(description: "HideExpectation")
+        vc.remove(child2, animated: true) { _ in
+            exp.fulfill()
+        }
+        waitForExpectations(timeout: 1, handler: nil)
+        XCTAssertEqual(vc.stackView.arrangedSubviews.count, 1)
+    }
+
     func testRemoveViewControllers() {
         let vc = Factory.createScrollingStackViewController(window: window)
         let height = vc.view.frame.height
@@ -69,16 +105,16 @@ class ScrollingStackViewTests: XCTestCase {
         let edgeInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         
         vc.add(viewController: arrangedVC)
-        vc.show(viewController: arrangedVC)
-        vc.show(viewController: containedVC, insertIfNeeded: (position: .end, insets: edgeInset))
+        vc.show(arrangedVC)
+        vc.show(containedVC, insertIfNeededWith: (position: .end, insets: edgeInset))
         XCTAssert(vc.stackView.arrangedSubviews.count == 2)
         
-        vc.remove(viewController: arrangedVC)
-        XCTAssert(vc.stackView.arrangedSubviews.count == 1)
+        vc.remove(arrangedVC, animated: false)
+        XCTAssertEqual(vc.stackView.arrangedSubviews.count, 1)
         XCTAssert(arrangedVC.view.superview == nil)
         
-        vc.remove(viewController: containedVC)
-        XCTAssert(vc.stackView.arrangedSubviews.count == 0)
+        vc.remove(containedVC, animated: false)
+        XCTAssertEqual(vc.stackView.arrangedSubviews.count, 0)
         XCTAssert(containedVC.view.superview == nil)
     }
 
@@ -97,7 +133,13 @@ class ScrollingStackViewTests: XCTestCase {
         let expectation = self.expectation(description: "Expect scrolling to finish")
         
         result.viewController.scrollTo(viewController: result.children[scrollIndex], {
-            XCTAssertEqual(result.viewController.scrollView.contentOffset.y, (height * CGFloat(scrollIndex)) - result.viewController.topLayoutGuide.length)
+            var safeAreaHeight: CGFloat = 0
+            if #available(iOS 11.0, *) {
+                safeAreaHeight = result.viewController.view.safeAreaInsets.top
+            } else {
+                safeAreaHeight = result.viewController.topLayoutGuide.length
+            }
+            XCTAssertEqual(result.viewController.scrollView.contentOffset.y, (height * CGFloat(scrollIndex)) - safeAreaHeight)
             expectation.fulfill()
         })
         
@@ -139,7 +181,13 @@ class ScrollingStackViewTests: XCTestCase {
         let expectation = self.expectation(description: "Expect scrolling to finish")
         
         result.viewController.scrollTo(viewController: result.children[scrollIndex], {
-            XCTAssertEqual(result.viewController.scrollView.contentOffset.y, ((height + insets.top + insets.bottom) * CGFloat(scrollIndex)) - result.viewController.topLayoutGuide.length)
+            var safeAreaHeight: CGFloat = 0
+            if #available(iOS 11.0, *) {
+                safeAreaHeight = result.viewController.view.safeAreaInsets.top
+            } else {
+                safeAreaHeight = result.viewController.topLayoutGuide.length
+            }
+            XCTAssertEqual(result.viewController.scrollView.contentOffset.y, ((height + insets.top + insets.bottom) * CGFloat(scrollIndex)) - safeAreaHeight)
             expectation.fulfill()
         })
         
