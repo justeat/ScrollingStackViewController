@@ -7,98 +7,124 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01A1BE40C9D6AF5925590828900A973D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		09CE6C10B8B3E15C1EA7AF7FED4D9412 /* ScrollingStackViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CC068C0A5255EF2B4300DAC3FCF564B /* ScrollingStackViewController-dummy.m */; };
-		20161DFDC870C820A20AAC0547BF3891 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		480DD0E8D42A16420A8CC9AD1540C7EB /* Pods-ScrollingStackViewController_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 624554A7D683C7E32664A4B142ABEB08 /* Pods-ScrollingStackViewController_Tests-dummy.m */; };
-		589CAAE2103B3921E197F154959688C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		5BD581AC22DF0EACCD5D69BBB609E4B3 /* Pods-ScrollingStackViewController_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C5A3E871E961DB5FE41390E21C6D4FBF /* Pods-ScrollingStackViewController_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		959E2E56563D04FE8E3975C8A08E7148 /* Pods-ScrollingStackViewController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCA2900BC752CA40EDC1A1BADECE34D /* Pods-ScrollingStackViewController_Example-dummy.m */; };
-		D7BC276D3A86C67C817429F9047771CA /* ScrollingStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2D9A906A5022BF741EE5B7F2AA6DE6 /* ScrollingStackViewController.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		DA00C3A10CD753CDB31B6C8D24EACFA9 /* Pods-ScrollingStackViewController_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5780A0F80E2F2807E0837E9E0E1BF457 /* Pods-ScrollingStackViewController_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FEC50818E641BB9A98BC06AAF36E081B /* ScrollingStackViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 72A53610FAA057376E6437AB26480E14 /* ScrollingStackViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26EF7527DF6102678D4C94806FDB0C81 /* ScrollingStackViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D77F257F6DF1639B8E71932000579037 /* ScrollingStackViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		30E4E9BB433659F2D6E85A5C26C9359E /* Pods-ScrollingStackViewController_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FF81128A754D5FE11D6F9FEF94284DBB /* Pods-ScrollingStackViewController_Tests-dummy.m */; };
+		468371E971E64A9B5CDA971618AC4B15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		5A04CFCC8074B2F855BA9F7DA17698DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		67E77E737B245449CB4E505713D45636 /* Pods-ScrollingStackViewController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3941D7479F702B146606940845F7E43C /* Pods-ScrollingStackViewController_Example-dummy.m */; };
+		6DBDD40D21273709FF450862F1867822 /* Pods-ScrollingStackViewController_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE5CE69F9384DD887072A6B865E4A9F7 /* Pods-ScrollingStackViewController_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74655707A80874CF7A56151A22082532 /* Pods-ScrollingStackViewController_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FC8A095A19D7AC74D3EC1538CDB7CBBB /* Pods-ScrollingStackViewController_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		922B25C24AED67FA53DBD471BDC631F6 /* ScrollingStackViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2467E9A2845FFCA429585EA6C9C6F522 /* ScrollingStackViewController-dummy.m */; };
+		A18CAA191A2A0836A6BA5974B35CFDB4 /* ScrollingStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2D9A906A5022BF741EE5B7F2AA6DE6 /* ScrollingStackViewController.swift */; };
+		E2AF0567E7DE7C90F61C2AD382A01346 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CD26EB8071FABE3A11715234C295F8A1 /* PBXContainerItemProxy */ = {
+		58416F1ED3BAD99B36E70D7351443153 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 56944FF05ABA96BFAAC7A14AC5117BB8;
-			remoteInfo = ScrollingStackViewController;
-		};
-		D17D7D4AA19FFD6FE0A7488D5FB59BED /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CC56009A2E4631A85758DFAD14C9DA42;
+			remoteGlobalIDString = F8627904BE645E409CF13A4B8D7FC2F4;
 			remoteInfo = "Pods-ScrollingStackViewController_Example";
+		};
+		6DAAC0569717A30B7C4F4EE14B825F8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5A7BF309038B09ADF471166889814E0;
+			remoteInfo = ScrollingStackViewController;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		057CAAD42F2AB03D9A2D6DE5FE061CDB /* Pods-ScrollingStackViewController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ScrollingStackViewController_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		06226E508A484FDEEAD62C6ABE383002 /* Pods-ScrollingStackViewController_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ScrollingStackViewController_Example.modulemap"; sourceTree = "<group>"; };
-		08DA0AE5560993C90D09D4124FFB332D /* Pods-ScrollingStackViewController_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ScrollingStackViewController_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		0B2D9A906A5022BF741EE5B7F2AA6DE6 /* ScrollingStackViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScrollingStackViewController.swift; path = ScrollingStackViewController/Classes/ScrollingStackViewController.swift; sourceTree = "<group>"; };
-		0CC068C0A5255EF2B4300DAC3FCF564B /* ScrollingStackViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ScrollingStackViewController-dummy.m"; sourceTree = "<group>"; };
-		0D3764C05F566E7940FCFCE3746E44A5 /* Pods_ScrollingStackViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ScrollingStackViewController_Example.framework; path = "Pods-ScrollingStackViewController_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E45E066DF9A2720A33E892F9F82D5A2 /* Pods-ScrollingStackViewController_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ScrollingStackViewController_Example-Info.plist"; sourceTree = "<group>"; };
-		2756A668ED26296AE6AF34F1B0267792 /* Pods_ScrollingStackViewController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ScrollingStackViewController_Tests.framework; path = "Pods-ScrollingStackViewController_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		27B582B2F57BD4DAF79A60D18CA6D32B /* ScrollingStackViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ScrollingStackViewController.modulemap; sourceTree = "<group>"; };
+		16675B07E308F01B11A43BEAE9E52821 /* Pods-ScrollingStackViewController_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ScrollingStackViewController_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1D8B66D7B0D390277502E5157DEBF8FF /* Pods-ScrollingStackViewController_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ScrollingStackViewController_Example-Info.plist"; sourceTree = "<group>"; };
+		2467E9A2845FFCA429585EA6C9C6F522 /* ScrollingStackViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ScrollingStackViewController-dummy.m"; sourceTree = "<group>"; };
 		2A5441B009E81BBE256B579ED0407B96 /* ScrollingStackViewController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ScrollingStackViewController.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		2F14D419F1F85FF0C14FA031DC5115B0 /* Pods-ScrollingStackViewController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ScrollingStackViewController_Example.release.xcconfig"; sourceTree = "<group>"; };
+		2F1089776A2ED39E6B2833F2BDBC7B77 /* Pods_ScrollingStackViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ScrollingStackViewController_Example.framework; path = "Pods-ScrollingStackViewController_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3764100687AD6926AA8F78D3E5864E1D /* ScrollingStackViewController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ScrollingStackViewController-Info.plist"; sourceTree = "<group>"; };
-		3BCA2900BC752CA40EDC1A1BADECE34D /* Pods-ScrollingStackViewController_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ScrollingStackViewController_Example-dummy.m"; sourceTree = "<group>"; };
-		3E92E498774A32B2EC7563A5087A3D49 /* ScrollingStackViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ScrollingStackViewController.xcconfig; sourceTree = "<group>"; };
-		46F1409DD3FB3347E355FD683C70A72F /* ScrollingStackViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ScrollingStackViewController.framework; path = ScrollingStackViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3941D7479F702B146606940845F7E43C /* Pods-ScrollingStackViewController_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ScrollingStackViewController_Example-dummy.m"; sourceTree = "<group>"; };
+		469E19D290DD50BCC62DFFDBB6FBDD87 /* Pods-ScrollingStackViewController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ScrollingStackViewController_Example.release.xcconfig"; sourceTree = "<group>"; };
+		4B376A8FBDECCFEFF4863BE823C8174E /* Pods-ScrollingStackViewController_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ScrollingStackViewController_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		50E139F8424F0EF01FCB0BA9AF54FB0B /* ScrollingStackViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ScrollingStackViewController.framework; path = ScrollingStackViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		547029318964483FE41F22BBB4634908 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		5780A0F80E2F2807E0837E9E0E1BF457 /* Pods-ScrollingStackViewController_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ScrollingStackViewController_Example-umbrella.h"; sourceTree = "<group>"; };
-		624554A7D683C7E32664A4B142ABEB08 /* Pods-ScrollingStackViewController_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ScrollingStackViewController_Tests-dummy.m"; sourceTree = "<group>"; };
-		72A53610FAA057376E6437AB26480E14 /* ScrollingStackViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ScrollingStackViewController-umbrella.h"; sourceTree = "<group>"; };
-		7D2B38CEA5B0EF4FD6373DE6D47A8D21 /* Pods-ScrollingStackViewController_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ScrollingStackViewController_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7E59AFA24C94B53A65C4F06BBFE826C7 /* Pods-ScrollingStackViewController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ScrollingStackViewController_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		8564B6921CB804496942CF3E90221426 /* Pods-ScrollingStackViewController_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ScrollingStackViewController_Tests-Info.plist"; sourceTree = "<group>"; };
-		99E6CB17F552EB09826963F601B668BE /* Pods-ScrollingStackViewController_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ScrollingStackViewController_Tests.modulemap"; sourceTree = "<group>"; };
+		56067A6FBA799CD13C3EE33182285C1E /* Pods-ScrollingStackViewController_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ScrollingStackViewController_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		571F68D66546336A0C8D14C4C9CC1F0C /* ScrollingStackViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ScrollingStackViewController-prefix.pch"; sourceTree = "<group>"; };
+		64DD01122B824BD4E26B646DB0EBD7CE /* Pods-ScrollingStackViewController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ScrollingStackViewController_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		77CBF3167E52833EFF1F8E5C1EAB90F6 /* Pods-ScrollingStackViewController_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ScrollingStackViewController_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		78DE4E8EEAA1C046725282A479E0612F /* ScrollingStackViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ScrollingStackViewController.xcconfig; sourceTree = "<group>"; };
+		838B6E3D6FD8413A3087C5C032AB209E /* ScrollingStackViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ScrollingStackViewController.modulemap; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A55B374DD9459CFA6F382B6694CA1A3D /* ScrollingStackViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ScrollingStackViewController-prefix.pch"; sourceTree = "<group>"; };
-		A5BB825CF390C9B7994178C3DF956235 /* Pods-ScrollingStackViewController_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ScrollingStackViewController_Example-frameworks.sh"; sourceTree = "<group>"; };
-		A8E70FEF33AA938E33CC82C4BADE1426 /* Pods-ScrollingStackViewController_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ScrollingStackViewController_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		B5E2A441A56702C52B36CF7377419DC6 /* Pods-ScrollingStackViewController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ScrollingStackViewController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		C5A3E871E961DB5FE41390E21C6D4FBF /* Pods-ScrollingStackViewController_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ScrollingStackViewController_Tests-umbrella.h"; sourceTree = "<group>"; };
+		C12D547E3596AB9AC84281983E114B6F /* Pods-ScrollingStackViewController_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ScrollingStackViewController_Tests-Info.plist"; sourceTree = "<group>"; };
+		CB222B1C195042F0940F529EFF81CEDE /* Pods_ScrollingStackViewController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ScrollingStackViewController_Tests.framework; path = "Pods-ScrollingStackViewController_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D19C44743CCB4B8C33DB1C17B658479F /* Pods-ScrollingStackViewController_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ScrollingStackViewController_Tests.modulemap"; sourceTree = "<group>"; };
+		D4806AE6016EECB5918700C323AEC255 /* ScrollingStackViewController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ScrollingStackViewController-Info.plist"; sourceTree = "<group>"; };
+		D77F257F6DF1639B8E71932000579037 /* ScrollingStackViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ScrollingStackViewController-umbrella.h"; sourceTree = "<group>"; };
+		DDC5DC4152C6948ACBFC215E88FCEBCF /* Pods-ScrollingStackViewController_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ScrollingStackViewController_Example.modulemap"; sourceTree = "<group>"; };
 		DF4C79C366335B6F623E5FD9D82A6AED /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		E08F4281580B5296318E5E3087353F4A /* Pods-ScrollingStackViewController_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ScrollingStackViewController_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		E21D1FE55C148007431675AFA7EEA915 /* Pods-ScrollingStackViewController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ScrollingStackViewController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		EE416CA974F2C3057EA61B686E01DA68 /* Pods-ScrollingStackViewController_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ScrollingStackViewController_Example-frameworks.sh"; sourceTree = "<group>"; };
+		FC8A095A19D7AC74D3EC1538CDB7CBBB /* Pods-ScrollingStackViewController_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ScrollingStackViewController_Example-umbrella.h"; sourceTree = "<group>"; };
+		FE5CE69F9384DD887072A6B865E4A9F7 /* Pods-ScrollingStackViewController_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ScrollingStackViewController_Tests-umbrella.h"; sourceTree = "<group>"; };
+		FF4FF4FD59F2D0C81244989C2E3CDC3A /* Pods-ScrollingStackViewController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ScrollingStackViewController_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		FF81128A754D5FE11D6F9FEF94284DBB /* Pods-ScrollingStackViewController_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ScrollingStackViewController_Tests-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		06B8D791D35486EE2F13B404EA9575A4 /* Frameworks */ = {
+		6578B657A63B651182E1D0337263930B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20161DFDC870C820A20AAC0547BF3891 /* Foundation.framework in Frameworks */,
+				5A04CFCC8074B2F855BA9F7DA17698DC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		75885C98294A71EA05CBCBD503029416 /* Frameworks */ = {
+		9E348B7DC291777661D73297978BEB38 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01A1BE40C9D6AF5925590828900A973D /* Foundation.framework in Frameworks */,
+				468371E971E64A9B5CDA971618AC4B15 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D14BA888BAE51E6470690D6074A1CDC0 /* Frameworks */ = {
+		BDCBD782111680575BEE04092FFCE87C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				589CAAE2103B3921E197F154959688C1 /* Foundation.framework in Frameworks */,
+				E2AF0567E7DE7C90F61C2AD382A01346 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00EB0C5BD4AFF54E409A70EA3004589F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F1089776A2ED39E6B2833F2BDBC7B77 /* Pods_ScrollingStackViewController_Example.framework */,
+				CB222B1C195042F0940F529EFF81CEDE /* Pods_ScrollingStackViewController_Tests.framework */,
+				50E139F8424F0EF01FCB0BA9AF54FB0B /* ScrollingStackViewController.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		017FD0EB5F8B159E12C7E7AB8A97B44C /* Pods-ScrollingStackViewController_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D19C44743CCB4B8C33DB1C17B658479F /* Pods-ScrollingStackViewController_Tests.modulemap */,
+				4B376A8FBDECCFEFF4863BE823C8174E /* Pods-ScrollingStackViewController_Tests-acknowledgements.markdown */,
+				56067A6FBA799CD13C3EE33182285C1E /* Pods-ScrollingStackViewController_Tests-acknowledgements.plist */,
+				FF81128A754D5FE11D6F9FEF94284DBB /* Pods-ScrollingStackViewController_Tests-dummy.m */,
+				C12D547E3596AB9AC84281983E114B6F /* Pods-ScrollingStackViewController_Tests-Info.plist */,
+				FE5CE69F9384DD887072A6B865E4A9F7 /* Pods-ScrollingStackViewController_Tests-umbrella.h */,
+				E21D1FE55C148007431675AFA7EEA915 /* Pods-ScrollingStackViewController_Tests.debug.xcconfig */,
+				FF4FF4FD59F2D0C81244989C2E3CDC3A /* Pods-ScrollingStackViewController_Tests.release.xcconfig */,
+			);
+			name = "Pods-ScrollingStackViewController_Tests";
+			path = "Target Support Files/Pods-ScrollingStackViewController_Tests";
+			sourceTree = "<group>";
+		};
 		06F778CF7D76241D4D61306B596FA9A2 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,56 +135,44 @@
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		1E0272041A1148D710A0E991A9B091F1 /* Products */ = {
+		5E94AA2377A5E3D5A0A67D87B00AD1BB /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				0D3764C05F566E7940FCFCE3746E44A5 /* Pods_ScrollingStackViewController_Example.framework */,
-				2756A668ED26296AE6AF34F1B0267792 /* Pods_ScrollingStackViewController_Tests.framework */,
-				46F1409DD3FB3347E355FD683C70A72F /* ScrollingStackViewController.framework */,
+				838B6E3D6FD8413A3087C5C032AB209E /* ScrollingStackViewController.modulemap */,
+				78DE4E8EEAA1C046725282A479E0612F /* ScrollingStackViewController.xcconfig */,
+				2467E9A2845FFCA429585EA6C9C6F522 /* ScrollingStackViewController-dummy.m */,
+				D4806AE6016EECB5918700C323AEC255 /* ScrollingStackViewController-Info.plist */,
+				571F68D66546336A0C8D14C4C9CC1F0C /* ScrollingStackViewController-prefix.pch */,
+				D77F257F6DF1639B8E71932000579037 /* ScrollingStackViewController-umbrella.h */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		39CA2C25D854768D54D7FAC29ACEA649 /* Pods-ScrollingStackViewController_Example */ = {
-			isa = PBXGroup;
-			children = (
-				06226E508A484FDEEAD62C6ABE383002 /* Pods-ScrollingStackViewController_Example.modulemap */,
-				08DA0AE5560993C90D09D4124FFB332D /* Pods-ScrollingStackViewController_Example-acknowledgements.markdown */,
-				A8E70FEF33AA938E33CC82C4BADE1426 /* Pods-ScrollingStackViewController_Example-acknowledgements.plist */,
-				3BCA2900BC752CA40EDC1A1BADECE34D /* Pods-ScrollingStackViewController_Example-dummy.m */,
-				A5BB825CF390C9B7994178C3DF956235 /* Pods-ScrollingStackViewController_Example-frameworks.sh */,
-				0E45E066DF9A2720A33E892F9F82D5A2 /* Pods-ScrollingStackViewController_Example-Info.plist */,
-				5780A0F80E2F2807E0837E9E0E1BF457 /* Pods-ScrollingStackViewController_Example-umbrella.h */,
-				7E59AFA24C94B53A65C4F06BBFE826C7 /* Pods-ScrollingStackViewController_Example.debug.xcconfig */,
-				2F14D419F1F85FF0C14FA031DC5115B0 /* Pods-ScrollingStackViewController_Example.release.xcconfig */,
-			);
-			name = "Pods-ScrollingStackViewController_Example";
-			path = "Target Support Files/Pods-ScrollingStackViewController_Example";
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/ScrollingStackViewController";
 			sourceTree = "<group>";
 		};
 		6B1F8561D98D609762DFA355D025C590 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				39CA2C25D854768D54D7FAC29ACEA649 /* Pods-ScrollingStackViewController_Example */,
-				9545E1879B4CE6EEB217F7034C76F3C9 /* Pods-ScrollingStackViewController_Tests */,
+				83C029968669002C16FDD28BAD444734 /* Pods-ScrollingStackViewController_Example */,
+				017FD0EB5F8B159E12C7E7AB8A97B44C /* Pods-ScrollingStackViewController_Tests */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		9545E1879B4CE6EEB217F7034C76F3C9 /* Pods-ScrollingStackViewController_Tests */ = {
+		83C029968669002C16FDD28BAD444734 /* Pods-ScrollingStackViewController_Example */ = {
 			isa = PBXGroup;
 			children = (
-				99E6CB17F552EB09826963F601B668BE /* Pods-ScrollingStackViewController_Tests.modulemap */,
-				7D2B38CEA5B0EF4FD6373DE6D47A8D21 /* Pods-ScrollingStackViewController_Tests-acknowledgements.markdown */,
-				E08F4281580B5296318E5E3087353F4A /* Pods-ScrollingStackViewController_Tests-acknowledgements.plist */,
-				624554A7D683C7E32664A4B142ABEB08 /* Pods-ScrollingStackViewController_Tests-dummy.m */,
-				8564B6921CB804496942CF3E90221426 /* Pods-ScrollingStackViewController_Tests-Info.plist */,
-				C5A3E871E961DB5FE41390E21C6D4FBF /* Pods-ScrollingStackViewController_Tests-umbrella.h */,
-				B5E2A441A56702C52B36CF7377419DC6 /* Pods-ScrollingStackViewController_Tests.debug.xcconfig */,
-				057CAAD42F2AB03D9A2D6DE5FE061CDB /* Pods-ScrollingStackViewController_Tests.release.xcconfig */,
+				DDC5DC4152C6948ACBFC215E88FCEBCF /* Pods-ScrollingStackViewController_Example.modulemap */,
+				16675B07E308F01B11A43BEAE9E52821 /* Pods-ScrollingStackViewController_Example-acknowledgements.markdown */,
+				77CBF3167E52833EFF1F8E5C1EAB90F6 /* Pods-ScrollingStackViewController_Example-acknowledgements.plist */,
+				3941D7479F702B146606940845F7E43C /* Pods-ScrollingStackViewController_Example-dummy.m */,
+				EE416CA974F2C3057EA61B686E01DA68 /* Pods-ScrollingStackViewController_Example-frameworks.sh */,
+				1D8B66D7B0D390277502E5157DEBF8FF /* Pods-ScrollingStackViewController_Example-Info.plist */,
+				FC8A095A19D7AC74D3EC1538CDB7CBBB /* Pods-ScrollingStackViewController_Example-umbrella.h */,
+				64DD01122B824BD4E26B646DB0EBD7CE /* Pods-ScrollingStackViewController_Example.debug.xcconfig */,
+				469E19D290DD50BCC62DFFDBB6FBDD87 /* Pods-ScrollingStackViewController_Example.release.xcconfig */,
 			);
-			name = "Pods-ScrollingStackViewController_Tests";
-			path = "Target Support Files/Pods-ScrollingStackViewController_Tests";
+			name = "Pods-ScrollingStackViewController_Example";
+			path = "Target Support Files/Pods-ScrollingStackViewController_Example";
 			sourceTree = "<group>";
 		};
 		A3EC60E0F02C5DF41A15A5A8822D152F /* Development Pods */ = {
@@ -167,20 +181,6 @@
 				FA89ED66BB79D20F4B3D7012B52C6A26 /* ScrollingStackViewController */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		AE7D5868958E0BA3747CD8EFF02A7D77 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				27B582B2F57BD4DAF79A60D18CA6D32B /* ScrollingStackViewController.modulemap */,
-				3E92E498774A32B2EC7563A5087A3D49 /* ScrollingStackViewController.xcconfig */,
-				0CC068C0A5255EF2B4300DAC3FCF564B /* ScrollingStackViewController-dummy.m */,
-				3764100687AD6926AA8F78D3E5864E1D /* ScrollingStackViewController-Info.plist */,
-				A55B374DD9459CFA6F382B6694CA1A3D /* ScrollingStackViewController-prefix.pch */,
-				72A53610FAA057376E6437AB26480E14 /* ScrollingStackViewController-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/ScrollingStackViewController";
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -197,7 +197,7 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				A3EC60E0F02C5DF41A15A5A8822D152F /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				1E0272041A1148D710A0E991A9B091F1 /* Products */,
+				00EB0C5BD4AFF54E409A70EA3004589F /* Products */,
 				6B1F8561D98D609762DFA355D025C590 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -215,7 +215,7 @@
 			children = (
 				0B2D9A906A5022BF741EE5B7F2AA6DE6 /* ScrollingStackViewController.swift */,
 				06F778CF7D76241D4D61306B596FA9A2 /* Pod */,
-				AE7D5868958E0BA3747CD8EFF02A7D77 /* Support Files */,
+				5E94AA2377A5E3D5A0A67D87B00AD1BB /* Support Files */,
 			);
 			name = ScrollingStackViewController;
 			path = ../..;
@@ -224,41 +224,60 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		058AA4D5603D0543396535AD859DA67C /* Headers */ = {
+		13299315F9D8EA704E8106ACCA6222A6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BD581AC22DF0EACCD5D69BBB609E4B3 /* Pods-ScrollingStackViewController_Tests-umbrella.h in Headers */,
+				6DBDD40D21273709FF450862F1867822 /* Pods-ScrollingStackViewController_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		10636D6F615D9F5BB164A11C177BD435 /* Headers */ = {
+		28C5EA20DAF74162CC57AAD4A78A2A1F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEC50818E641BB9A98BC06AAF36E081B /* ScrollingStackViewController-umbrella.h in Headers */,
+				74655707A80874CF7A56151A22082532 /* Pods-ScrollingStackViewController_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CF9ED1DE6A6F61BD7F8A780AF04C5D97 /* Headers */ = {
+		5ABE66B15ACD203131BA1696AB178D24 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA00C3A10CD753CDB31B6C8D24EACFA9 /* Pods-ScrollingStackViewController_Example-umbrella.h in Headers */,
+				26EF7527DF6102678D4C94806FDB0C81 /* ScrollingStackViewController-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		56944FF05ABA96BFAAC7A14AC5117BB8 /* ScrollingStackViewController */ = {
+		689276316AF16263C0CFC40773B734FD /* Pods-ScrollingStackViewController_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E387CC2EB1A475D077576131EE7FB2C5 /* Build configuration list for PBXNativeTarget "ScrollingStackViewController" */;
+			buildConfigurationList = 7ADD32DEFD3CF0D9FA37BA4022BDC1B2 /* Build configuration list for PBXNativeTarget "Pods-ScrollingStackViewController_Tests" */;
 			buildPhases = (
-				10636D6F615D9F5BB164A11C177BD435 /* Headers */,
-				081F4B9BF91333B64CA2754C9C8FCE1A /* Sources */,
-				D14BA888BAE51E6470690D6074A1CDC0 /* Frameworks */,
-				6D7339E1AE9ECE2FF26227E1502F8518 /* Resources */,
+				13299315F9D8EA704E8106ACCA6222A6 /* Headers */,
+				D72E9B035847DA5E82DDAC0DB6E4C518 /* Sources */,
+				BDCBD782111680575BEE04092FFCE87C /* Frameworks */,
+				36DEBCEB5575D5BFF30169D4D0C4B6FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D43C57CEAA39766B1A903852F62BAC46 /* PBXTargetDependency */,
+			);
+			name = "Pods-ScrollingStackViewController_Tests";
+			productName = "Pods-ScrollingStackViewController_Tests";
+			productReference = CB222B1C195042F0940F529EFF81CEDE /* Pods_ScrollingStackViewController_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F5A7BF309038B09ADF471166889814E0 /* ScrollingStackViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2082E062EA6071EF4E40E3F56C518237 /* Build configuration list for PBXNativeTarget "ScrollingStackViewController" */;
+			buildPhases = (
+				5ABE66B15ACD203131BA1696AB178D24 /* Headers */,
+				A45107FF44238244B2CF35573A702C58 /* Sources */,
+				6578B657A63B651182E1D0337263930B /* Frameworks */,
+				C481618AACBF25BBC39FE4F53EC3BCFA /* Resources */,
 			);
 			buildRules = (
 			);
@@ -266,45 +285,26 @@
 			);
 			name = ScrollingStackViewController;
 			productName = ScrollingStackViewController;
-			productReference = 46F1409DD3FB3347E355FD683C70A72F /* ScrollingStackViewController.framework */;
+			productReference = 50E139F8424F0EF01FCB0BA9AF54FB0B /* ScrollingStackViewController.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		62C9DD824974837EB397005F97D8FA2B /* Pods-ScrollingStackViewController_Tests */ = {
+		F8627904BE645E409CF13A4B8D7FC2F4 /* Pods-ScrollingStackViewController_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 21C8A5AAA8A1719F6A8B661BFA28A982 /* Build configuration list for PBXNativeTarget "Pods-ScrollingStackViewController_Tests" */;
+			buildConfigurationList = 07853D4ABED174E1818885A003D243A2 /* Build configuration list for PBXNativeTarget "Pods-ScrollingStackViewController_Example" */;
 			buildPhases = (
-				058AA4D5603D0543396535AD859DA67C /* Headers */,
-				1DB206E2A1F8FC524FDFC471E6247CA6 /* Sources */,
-				06B8D791D35486EE2F13B404EA9575A4 /* Frameworks */,
-				9A41B32F483FA4F4ACF9CE26A13A6655 /* Resources */,
+				28C5EA20DAF74162CC57AAD4A78A2A1F /* Headers */,
+				273B51163E42146AE3E5DA4976B06C4A /* Sources */,
+				9E348B7DC291777661D73297978BEB38 /* Frameworks */,
+				8A9061228264167729B99E1D5DF8D8B4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BA3E32BCACE42B8140C3637694E86D91 /* PBXTargetDependency */,
-			);
-			name = "Pods-ScrollingStackViewController_Tests";
-			productName = "Pods-ScrollingStackViewController_Tests";
-			productReference = 2756A668ED26296AE6AF34F1B0267792 /* Pods_ScrollingStackViewController_Tests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		CC56009A2E4631A85758DFAD14C9DA42 /* Pods-ScrollingStackViewController_Example */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7E8CFFFED9F35BFD3B4DAA358B69B08F /* Build configuration list for PBXNativeTarget "Pods-ScrollingStackViewController_Example" */;
-			buildPhases = (
-				CF9ED1DE6A6F61BD7F8A780AF04C5D97 /* Headers */,
-				AC4F16CFAE89288C45189F81D0C13AB0 /* Sources */,
-				75885C98294A71EA05CBCBD503029416 /* Frameworks */,
-				AEB5FC77C5498D2E98060900A69CCB47 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				982977154E6971D18BBE0D8DB3465D81 /* PBXTargetDependency */,
+				ED142DE40C242B62E62F2AC9DFEDE42F /* PBXTargetDependency */,
 			);
 			name = "Pods-ScrollingStackViewController_Example";
 			productName = "Pods-ScrollingStackViewController_Example";
-			productReference = 0D3764C05F566E7940FCFCE3746E44A5 /* Pods_ScrollingStackViewController_Example.framework */;
+			productReference = 2F1089776A2ED39E6B2833F2BDBC7B77 /* Pods_ScrollingStackViewController_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -313,8 +313,8 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -322,35 +322,36 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 1E0272041A1148D710A0E991A9B091F1 /* Products */;
+			productRefGroup = 00EB0C5BD4AFF54E409A70EA3004589F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CC56009A2E4631A85758DFAD14C9DA42 /* Pods-ScrollingStackViewController_Example */,
-				62C9DD824974837EB397005F97D8FA2B /* Pods-ScrollingStackViewController_Tests */,
-				56944FF05ABA96BFAAC7A14AC5117BB8 /* ScrollingStackViewController */,
+				F8627904BE645E409CF13A4B8D7FC2F4 /* Pods-ScrollingStackViewController_Example */,
+				689276316AF16263C0CFC40773B734FD /* Pods-ScrollingStackViewController_Tests */,
+				F5A7BF309038B09ADF471166889814E0 /* ScrollingStackViewController */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6D7339E1AE9ECE2FF26227E1502F8518 /* Resources */ = {
+		36DEBCEB5575D5BFF30169D4D0C4B6FD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9A41B32F483FA4F4ACF9CE26A13A6655 /* Resources */ = {
+		8A9061228264167729B99E1D5DF8D8B4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AEB5FC77C5498D2E98060900A69CCB47 /* Resources */ = {
+		C481618AACBF25BBC39FE4F53EC3BCFA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -360,52 +361,115 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		081F4B9BF91333B64CA2754C9C8FCE1A /* Sources */ = {
+		273B51163E42146AE3E5DA4976B06C4A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09CE6C10B8B3E15C1EA7AF7FED4D9412 /* ScrollingStackViewController-dummy.m in Sources */,
-				D7BC276D3A86C67C817429F9047771CA /* ScrollingStackViewController.swift in Sources */,
+				67E77E737B245449CB4E505713D45636 /* Pods-ScrollingStackViewController_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1DB206E2A1F8FC524FDFC471E6247CA6 /* Sources */ = {
+		A45107FF44238244B2CF35573A702C58 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				480DD0E8D42A16420A8CC9AD1540C7EB /* Pods-ScrollingStackViewController_Tests-dummy.m in Sources */,
+				922B25C24AED67FA53DBD471BDC631F6 /* ScrollingStackViewController-dummy.m in Sources */,
+				A18CAA191A2A0836A6BA5974B35CFDB4 /* ScrollingStackViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC4F16CFAE89288C45189F81D0C13AB0 /* Sources */ = {
+		D72E9B035847DA5E82DDAC0DB6E4C518 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				959E2E56563D04FE8E3975C8A08E7148 /* Pods-ScrollingStackViewController_Example-dummy.m in Sources */,
+				30E4E9BB433659F2D6E85A5C26C9359E /* Pods-ScrollingStackViewController_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		982977154E6971D18BBE0D8DB3465D81 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ScrollingStackViewController;
-			target = 56944FF05ABA96BFAAC7A14AC5117BB8 /* ScrollingStackViewController */;
-			targetProxy = CD26EB8071FABE3A11715234C295F8A1 /* PBXContainerItemProxy */;
-		};
-		BA3E32BCACE42B8140C3637694E86D91 /* PBXTargetDependency */ = {
+		D43C57CEAA39766B1A903852F62BAC46 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-ScrollingStackViewController_Example";
-			target = CC56009A2E4631A85758DFAD14C9DA42 /* Pods-ScrollingStackViewController_Example */;
-			targetProxy = D17D7D4AA19FFD6FE0A7488D5FB59BED /* PBXContainerItemProxy */;
+			target = F8627904BE645E409CF13A4B8D7FC2F4 /* Pods-ScrollingStackViewController_Example */;
+			targetProxy = 58416F1ED3BAD99B36E70D7351443153 /* PBXContainerItemProxy */;
+		};
+		ED142DE40C242B62E62F2AC9DFEDE42F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ScrollingStackViewController;
+			target = F5A7BF309038B09ADF471166889814E0 /* ScrollingStackViewController */;
+			targetProxy = 6DAAC0569717A30B7C4F4EE14B825F8A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0B4AB6FBEB2353BE0AE9814514905675 /* Release */ = {
+		0279E1AC6A58C6365299798E7D1AF396 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F14D419F1F85FF0C14FA031DC5115B0 /* Pods-ScrollingStackViewController_Example.release.xcconfig */;
+			baseConfigurationReference = 78DE4E8EEAA1C046725282A479E0612F /* ScrollingStackViewController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ScrollingStackViewController/ScrollingStackViewController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ScrollingStackViewController/ScrollingStackViewController-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ScrollingStackViewController/ScrollingStackViewController.modulemap";
+				PRODUCT_MODULE_NAME = ScrollingStackViewController;
+				PRODUCT_NAME = ScrollingStackViewController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1D8D2832BB2E2746E58EBC7582826DC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78DE4E8EEAA1C046725282A479E0612F /* ScrollingStackViewController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ScrollingStackViewController/ScrollingStackViewController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ScrollingStackViewController/ScrollingStackViewController-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ScrollingStackViewController/ScrollingStackViewController.modulemap";
+				PRODUCT_MODULE_NAME = ScrollingStackViewController;
+				PRODUCT_NAME = ScrollingStackViewController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		57CD977615C78169DA47BE359407A13D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 469E19D290DD50BCC62DFFDBB6FBDD87 /* Pods-ScrollingStackViewController_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -437,75 +501,9 @@
 			};
 			name = Release;
 		};
-		47AF723ECDE9F1340093A14820E04417 /* Debug */ = {
+		58560C6E66BF8881D1644DA3C11E0B08 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5E2A441A56702C52B36CF7377419DC6 /* Pods-ScrollingStackViewController_Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ScrollingStackViewController_Tests/Pods-ScrollingStackViewController_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ScrollingStackViewController_Tests/Pods-ScrollingStackViewController_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		59E232EE9E98DA08DEFB3BE49167E25A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E59AFA24C94B53A65C4F06BBFE826C7 /* Pods-ScrollingStackViewController_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ScrollingStackViewController_Example/Pods-ScrollingStackViewController_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ScrollingStackViewController_Example/Pods-ScrollingStackViewController_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		5E4450C3BF9762340B4E94D5E61BA6EF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 057CAAD42F2AB03D9A2D6DE5FE061CDB /* Pods-ScrollingStackViewController_Tests.release.xcconfig */;
+			baseConfigurationReference = FF4FF4FD59F2D0C81244989C2E3CDC3A /* Pods-ScrollingStackViewController_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -536,69 +534,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		79523DD3B3E72DDEC267327A2CB5C6A9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E92E498774A32B2EC7563A5087A3D49 /* ScrollingStackViewController.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ScrollingStackViewController/ScrollingStackViewController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ScrollingStackViewController/ScrollingStackViewController-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ScrollingStackViewController/ScrollingStackViewController.modulemap";
-				PRODUCT_MODULE_NAME = ScrollingStackViewController;
-				PRODUCT_NAME = ScrollingStackViewController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8730F94871DEB5911602B0B604223BEA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E92E498774A32B2EC7563A5087A3D49 /* ScrollingStackViewController.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ScrollingStackViewController/ScrollingStackViewController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ScrollingStackViewController/ScrollingStackViewController-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ScrollingStackViewController/ScrollingStackViewController.modulemap";
-				PRODUCT_MODULE_NAME = ScrollingStackViewController;
-				PRODUCT_NAME = ScrollingStackViewController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		8F17DC3A99F99FBAD606CE6963886315 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -724,14 +659,89 @@
 			};
 			name = Debug;
 		};
+		987ACAE32D2268EFC739D8E4B8ABD622 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64DD01122B824BD4E26B646DB0EBD7CE /* Pods-ScrollingStackViewController_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ScrollingStackViewController_Example/Pods-ScrollingStackViewController_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ScrollingStackViewController_Example/Pods-ScrollingStackViewController_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CBD5A217FF22D8DEC66DE29B9D7517A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E21D1FE55C148007431675AFA7EEA915 /* Pods-ScrollingStackViewController_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ScrollingStackViewController_Tests/Pods-ScrollingStackViewController_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ScrollingStackViewController_Tests/Pods-ScrollingStackViewController_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		21C8A5AAA8A1719F6A8B661BFA28A982 /* Build configuration list for PBXNativeTarget "Pods-ScrollingStackViewController_Tests" */ = {
+		07853D4ABED174E1818885A003D243A2 /* Build configuration list for PBXNativeTarget "Pods-ScrollingStackViewController_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				47AF723ECDE9F1340093A14820E04417 /* Debug */,
-				5E4450C3BF9762340B4E94D5E61BA6EF /* Release */,
+				987ACAE32D2268EFC739D8E4B8ABD622 /* Debug */,
+				57CD977615C78169DA47BE359407A13D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2082E062EA6071EF4E40E3F56C518237 /* Build configuration list for PBXNativeTarget "ScrollingStackViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0279E1AC6A58C6365299798E7D1AF396 /* Debug */,
+				1D8D2832BB2E2746E58EBC7582826DC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -745,20 +755,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7E8CFFFED9F35BFD3B4DAA358B69B08F /* Build configuration list for PBXNativeTarget "Pods-ScrollingStackViewController_Example" */ = {
+		7ADD32DEFD3CF0D9FA37BA4022BDC1B2 /* Build configuration list for PBXNativeTarget "Pods-ScrollingStackViewController_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				59E232EE9E98DA08DEFB3BE49167E25A /* Debug */,
-				0B4AB6FBEB2353BE0AE9814514905675 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E387CC2EB1A475D077576131EE7FB2C5 /* Build configuration list for PBXNativeTarget "ScrollingStackViewController" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8730F94871DEB5911602B0B604223BEA /* Debug */,
-				79523DD3B3E72DDEC267327A2CB5C6A9 /* Release */,
+				CBD5A217FF22D8DEC66DE29B9D7517A1 /* Debug */,
+				58560C6E66BF8881D1644DA3C11E0B08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
