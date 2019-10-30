@@ -10,6 +10,6 @@ osx_image: xcode10.2
 language: swift
 
 script:
-- bundle exec pod install --project-directory=Example
+- travis_wait bundle exec pod install --project-directory=Example
 - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/ScrollingStackViewController.xcworkspace -scheme ScrollingStackViewController-Example ONLY_ACTIVE_ARCH=NO -destination 'platform=iOS Simulator,OS=12.2,name=iPhone X'
 - bundle exec pod lib lint --allow-warnings
