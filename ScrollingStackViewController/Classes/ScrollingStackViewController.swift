@@ -265,9 +265,11 @@ open class ScrollingStackViewController: UIViewController {
         let toAlpha: CGFloat = hidden ? 0 : 1
         
         if !animated {
-            view.alpha = toAlpha
-            view.isHidden = hidden
-            completionHandler?(true)
+            DispatchQueue.main.async {
+                view.alpha = toAlpha
+                view.isHidden = hidden
+                completionHandler?(true)
+            }
         } else {
             animate({
                 view.alpha = toAlpha
