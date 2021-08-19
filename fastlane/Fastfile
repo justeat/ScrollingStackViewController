@@ -1,0 +1,28 @@
+default_platform :ios
+
+platform :ios do
+
+    before_all do
+        ensure_bundle_exec
+        $derived_data_folder = "./derived_data"
+        $workspace_filename = "Example/ScrollingStackViewController.xcworkspace"
+        $common_test_xcargs = "COMPILER_INDEX_STORE_ENABLE=NO"
+    end
+
+    lane :unit_tests do |parameters|
+        UI.user_error! "Missing parameter 'device'" unless parameters.has_key?(:device)
+        device = parameters[:device]
+        run_tests(
+            workspace: $workspace_filename,
+            scheme: "ScrollingStackViewController-Example",
+            testplan: "UnitTests",
+            device: device,
+            code_coverage: true,
+            result_bundle: true,
+            concurrent_workers: 1,
+            xcargs: $common_test_xcargs,
+            derived_data_path: $derived_data_folder
+        )
+    end
+
+end

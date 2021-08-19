@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "412F9657-B02E-44FB-96F3-FB1D00E9D1F7",
+      "name" : "Default",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:ScrollingStackViewController.xcodeproj",
+      "identifier" : "607FACCF1AFB9204008FA782",
+      "name" : "ScrollingStackViewController_Example"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:ScrollingStackViewController.xcodeproj",
+        "identifier" : "607FACE41AFB9204008FA782",
+        "name" : "ScrollingStackViewController_Tests"
+      }
+    }
+  ],
+  "version" : 1
+}
