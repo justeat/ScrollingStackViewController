@@ -118,7 +118,22 @@ stackViewBackgroundView.alpha = 0
 
 ## Requirements
 
-ScrollingStackViewController requires iOS 9 or higher. Swift 4, XCode 9 supported.
+ScrollingStackViewController requires iOS 11 or higher.
+
+## Installation
+
+### CocoaPods
+
+ScrollingStackViewController is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
+
+```ruby
+pod "ScrollingStackViewController"
+```
+
+### Swift Package Manager
+
+ScrollingStackViewController is also available through SPM. Copy the URL for this repo, and add the package in your project settings.
+
 
 ## License
 
