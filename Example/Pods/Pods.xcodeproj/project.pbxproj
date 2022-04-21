@@ -472,37 +472,6 @@
 			};
 			name = Debug;
 		};
-		33634331775A79056E80A24514106F92 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73707F9C44D7745D4F53D7D1A6B757FD /* ScrollingStackViewController.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ScrollingStackViewController/ScrollingStackViewController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ScrollingStackViewController/ScrollingStackViewController-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ScrollingStackViewController/ScrollingStackViewController.modulemap";
-				PRODUCT_MODULE_NAME = ScrollingStackViewController;
-				PRODUCT_NAME = ScrollingStackViewController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		44607EC16452EFAB564245DFB35FACF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E21D1FE55C148007431675AFA7EEA915 /* Pods-ScrollingStackViewController_Tests.debug.xcconfig */;
@@ -600,10 +569,11 @@
 			};
 			name = Release;
 		};
-		BC56004FE430F8E574531DFF23312660 /* Debug */ = {
+		B621ED012F924B78F0AA4E708086BAE0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4481B6F53B609D6439193C507FA02279 /* ScrollingStackViewController.debug.xcconfig */;
+			baseConfigurationReference = 73707F9C44D7745D4F53D7D1A6B757FD /* ScrollingStackViewController.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -615,7 +585,39 @@
 				GCC_PREFIX_HEADER = "Target Support Files/ScrollingStackViewController/ScrollingStackViewController-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ScrollingStackViewController/ScrollingStackViewController-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ScrollingStackViewController/ScrollingStackViewController.modulemap";
+				PRODUCT_MODULE_NAME = ScrollingStackViewController;
+				PRODUCT_NAME = ScrollingStackViewController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C17039D0FB89998475CED258732C8608 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4481B6F53B609D6439193C507FA02279 /* ScrollingStackViewController.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ScrollingStackViewController/ScrollingStackViewController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ScrollingStackViewController/ScrollingStackViewController-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/ScrollingStackViewController/ScrollingStackViewController.modulemap";
 				PRODUCT_MODULE_NAME = ScrollingStackViewController;
@@ -740,8 +742,8 @@
 		2082E062EA6071EF4E40E3F56C518237 /* Build configuration list for PBXNativeTarget "ScrollingStackViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC56004FE430F8E574531DFF23312660 /* Debug */,
-				33634331775A79056E80A24514106F92 /* Release */,
+				C17039D0FB89998475CED258732C8608 /* Debug */,
+				B621ED012F924B78F0AA4E708086BAE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

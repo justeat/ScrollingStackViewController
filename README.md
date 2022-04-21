@@ -118,7 +118,7 @@ stackViewBackgroundView.alpha = 0
 
 ## Requirements
 
-ScrollingStackViewController requires iOS 11 or higher.
+ScrollingStackViewController requires iOS 12 or higher.
 
 ## Installation
 

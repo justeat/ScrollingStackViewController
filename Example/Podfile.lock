@@ -1,5 +1,5 @@
 PODS:
-  - ScrollingStackViewController (5.0.1)
+  - ScrollingStackViewController (6.0.0)
 
 DEPENDENCIES:
   - ScrollingStackViewController (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ScrollingStackViewController: 3f0dc12878a0287730c659bd3f7b423e894adcb7
+  ScrollingStackViewController: b2c7184197705db2681c6071c6c5aecdde73569b
 
-PODFILE CHECKSUM: 1107023c97aaa6562f2eb38595e37b1267bba2b1
+PODFILE CHECKSUM: 1b324814f8ab24f2809e6cdca5fafe1114859d00
 
 COCOAPODS: 1.10.2
