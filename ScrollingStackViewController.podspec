@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ScrollingStackViewController'
-  s.version          = '6.0.0'
+  s.version          = ENV['LIB_VERSION']
   s.summary          = 'A view controller that uses root views of child view controllers as views in a UIStackView.'
 
   s.description      = <<-DESC
