@@ -16,7 +16,7 @@ jobs:
     - name: Setup Xcode
       uses: maxim-lobanov/setup-xcode@v1
       with:
-        xcode-version: '13.3.1'
+        xcode-version: '13.2.1'
     - name: Setup ruby and bundler dependencies
       uses: ruby/setup-ruby@v1.81.0
       with:
