@@ -1,5 +1,7 @@
 ![ScrollingStackViewController Banner](./img/banner.png)
 
+### Warning: This library is not supported by Just Eat Takeaway anymore and therefore considered deprecated. The repository has been archived.
+
 # ScrollingStackViewController
 
 [![Build Status](https://travis-ci.org/justeat/ScrollingStackViewController.svg?branch=master)](https://travis-ci.org/justeat/ScrollingStackViewController)
